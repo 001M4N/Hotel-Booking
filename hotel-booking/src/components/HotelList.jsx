@@ -1,6 +1,6 @@
 import HotelCard from "./HotelCard";
 
-function HotelLists() {
+function HotelList() {
   return (
     <div className="my-10">
       <h2 className="text-xl font-bold text-center mb-6 sm:mb-4">Hotels</h2>
@@ -15,4 +15,4 @@ function HotelLists() {
     </div>
   );
 }
-export default HotelLists;
+export default HotelList;
