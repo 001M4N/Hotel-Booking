@@ -1,6 +1,6 @@
-function HotelCard() {
+function HotelCard({ cardSize = "w-100" }) {
   return (
-    <div className="card bg-slate-700 w-100 shadow-sm">
+    <div className={`card bg-slate-700 ${cardSize} shadow-sm`}>
       <figure className="px-5 pt-10">
         <img
           src="../../public/assets/placeHolderImage.webp"
