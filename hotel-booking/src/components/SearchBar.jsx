@@ -1,6 +1,6 @@
 function SearchBar() {
   return (
-    <div className="container h-30 flex flex-col justify-center gap-x-5 gap-y-3 items-center sm:flex-row">
+    <div className="h-30 flex flex-col justify-center gap-x-5 gap-y-3 items-center sm:flex-row">
       <label className="input">
         <svg
           className="h-[1em] opacity-50"
@@ -21,7 +21,7 @@ function SearchBar() {
         <input type="search" required placeholder="Search Hotel Name" />
       </label>
 
-      <select defaultValue="Tehran" className="select sm:w-3xs">
+      <select defaultValue="Tehran" className="select sm:w-3xs cursor-pointer">
         <option>Tehran</option>
         <option>Kish</option>
       </select>
