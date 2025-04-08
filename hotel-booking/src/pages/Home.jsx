@@ -5,12 +5,12 @@ import Footer from "../components/Footer";
 
 function Home() {
   return (
-    <>
+    <div>
       <Header />
       <SearchBar />
       <PopularHotels />
       <Footer />
-    </>
+    </div>
   );
 }
 

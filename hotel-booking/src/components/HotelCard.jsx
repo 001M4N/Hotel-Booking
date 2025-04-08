@@ -1,9 +1,9 @@
 function HotelCard() {
   return (
-    <div className="card bg-slate-700 w-70 shadow-sm">
-      <figure className="px-10 pt-10">
+    <div className="card bg-slate-700 w-100 shadow-sm">
+      <figure className="px-5 pt-10">
         <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+          src="../../public/assets/placeHolderImage.webp"
           alt="Hotel Image"
           className="rounded-xl"
         />
