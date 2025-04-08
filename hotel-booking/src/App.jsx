@@ -1,11 +1,9 @@
-import Header from "./components/Header";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <Header />
-      <h1 className="text-blue-100">start of the hotel-booking project</h1>
-      {/* <Footer /> */}
+      <Home />
     </>
   );
 }
