@@ -6,7 +6,7 @@ function HotelList() {
       <div className="divider divider mb-6">
         <h2 className="text-xl font-bold text-center">Hotels</h2>
       </div>
-      <div className="m-5 place-items-center grid gap-5 grid-cols-[repeat(auto-fit,13rem)] sm:grid-cols-[repeat(auto-fit,15rem)]">
+      <div className="justify-center m-5 place-items-center grid gap-5 grid-cols-[repeat(auto-fit,13rem)] sm:grid-cols-[repeat(auto-fit,15rem)]">
         <HotelCard cardSize="w-50 sm:w-60" cardColor="bg-slate-700" />
         <HotelCard cardSize="w-50 sm:w-60" cardColor="bg-slate-700" />
         <HotelCard cardSize="w-50 sm:w-60" cardColor="bg-slate-700" />
