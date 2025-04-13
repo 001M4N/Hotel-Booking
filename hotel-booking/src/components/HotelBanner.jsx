@@ -1,4 +1,4 @@
-import HotelRating from "./Hotelratings";
+import HotelRating from "./HotelRating";
 
 export default function Hotelbanner() {
   return (
