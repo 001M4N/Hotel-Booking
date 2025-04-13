@@ -1,5 +1,6 @@
 import NumberOfPeopleSelector from "./NumberOfPeopleSelector";
-import Calendar from "./Calendar";
+// import Calendar from "./Calendar";
+import Calendar from "react-calendar";
 
 export default function RoomCard({ cardColor, cardSize, textColor }) {
   return (

@@ -6,7 +6,7 @@ import List from "../components/List";
 import RoomCard from "../components/RoomCard";
 
 export default function HotelPage() {
-  const Rooms = Array(7)
+  const Rooms = Array(2)
     .fill()
     .map((_, index) => (
       <RoomCard key={index} cardSize="w-50 sm:w-60" cardColor="bg-slate-700" />
