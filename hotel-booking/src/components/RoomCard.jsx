@@ -1,4 +1,4 @@
-export default function RoomCard() {
+export default function RoomCard({ cardColor, cardSize, textColor }) {
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
       <figure className="px-5 pt-10">

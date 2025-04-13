@@ -1,6 +1,6 @@
 import HotelCard from "./HotelCard";
 
-function List(items) {
+function List({ items }) {
   return (
     <div className="my-10">
       <div className="divider divider mb-6">
