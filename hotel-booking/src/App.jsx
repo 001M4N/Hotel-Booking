@@ -1,9 +1,10 @@
-import Home from "./pages/Home";
+// import Home from "./pages/Home";
+import HotelPage from "./pages/HotelPage";
 
 function App() {
   return (
     <>
-      <Home />
+      <HotelPage />
     </>
   );
 }
