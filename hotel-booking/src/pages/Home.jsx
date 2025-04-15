@@ -3,13 +3,20 @@ import SearchBar from "../components/SearchBar";
 import PopularHotels from "../components/PopularHotels";
 import List from "../components/List";
 import Footer from "../components/Footer";
-import HotelCard from "../components/HotelCard";
+import PropertyCard from "../components/PropertyCard";
 
 function Home() {
   const hotels = Array(10)
     .fill()
     .map((_, index) => (
-      <HotelCard key={index} cardSize="w-50 sm:w-60" cardColor="bg-slate-700" />
+      <PropertyCard
+        key={index}
+        cardSize="w-50 sm:w-60"
+        cardColor="bg-slate-700"
+        cardTitle="Hotel"
+        cardDescription="Price = $100"
+        buttonText="Hotel Page"
+      />
     ));
 
   return (
@@ -17,7 +24,7 @@ function Home() {
       <Header />
       <SearchBar />
       <PopularHotels />
-      <List items={hotels} />
+      <List items={hotels} listTitle="Hotels" />
       <Footer />
     </div>
   );

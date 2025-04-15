@@ -1,7 +1,10 @@
-function HotelCard({
+function PropertyCard({
   cardSize = "w-80 sm:w-80",
   cardColor = "bg-slate-700",
   textColor = "text-white",
+  cardTitle,
+  cardDescription,
+  buttonText,
 }) {
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
@@ -13,14 +16,14 @@ function HotelCard({
         />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className={`card-title ${textColor}`}>Hotel Tehran</h2>
-        <p className={`${textColor}`}> Price: $100</p>
+        <h2 className={`card-title ${textColor}`}>{cardTitle}</h2>
+        <p className={`${textColor}`}>{cardDescription}</p>
         <div className="card-actions">
-          <button className="btn btn-base-200">Hotel Page</button>
+          <button className="btn btn-base-200">{buttonText}</button>
         </div>
       </div>
     </div>
   );
 }
 
-export default HotelCard;
+export default PropertyCard;

@@ -3,13 +3,21 @@ import Footer from "../components/Footer";
 import Hotelbanner from "../components/Hotelbanner";
 import HotelDescription from "../components/HotelDescription";
 import List from "../components/List";
-import RoomCard from "../components/RoomCard";
+import PropertyCard from "../components/PropertyCard";
+import Filter from "../components/Filter";
 
 export default function HotelPage() {
-  const Rooms = Array(2)
+  const Rooms = Array(10)
     .fill()
     .map((_, index) => (
-      <RoomCard key={index} cardSize="w-50 sm:w-60" cardColor="bg-slate-700" />
+      <PropertyCard
+        key={index}
+        cardSize="w-50 sm:w-60"
+        cardColor="bg-slate-700"
+        cardTitle="King Room"
+        cardDescription="Total Price = $100"
+        buttonText="Book"
+      />
     ));
 
   return (
@@ -17,7 +25,8 @@ export default function HotelPage() {
       <Header />
       <Hotelbanner />
       <HotelDescription />
-      <List items={Rooms} />
+      <Filter />
+      <List items={Rooms} listTitle="Rooms" />
       <Footer />
     </>
   );
