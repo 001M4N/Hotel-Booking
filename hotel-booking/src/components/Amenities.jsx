@@ -17,7 +17,6 @@ import {
   faSuitcase,
   faTree,
   faBook,
-  faKitMedical,
   faBell,
   faDrumstickBite,
 } from "@fortawesome/free-solid-svg-icons";
@@ -46,31 +45,63 @@ export default function Amenities() {
   };
 
   return (
-    <div className="h-100 w-full">
-      <table className="table mt-10 ml-5 w-1/2">
-        <tbody>
-          <tr className="bg-base-200">
-            <td>
-              <FontAwesomeIcon icon={faTaxi} className="mr-2" />
-              Taxi
-            </td>
-            <td>
-              <FontAwesomeIcon icon={faWifi} className="mr-2" />
-              Wifi
-            </td>
-          </tr>
-          <tr className="bg-base-200">
-            <td>
-              <FontAwesomeIcon icon={faSmoking} className="mr-2" />
-              Smoke Room
-            </td>
-            <td>
-              <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
-              Disable-people friendlly
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table className="table my-10 ml-5 w-1/2 h-20">
+      <tbody>
+        <tr className="bg-base-200">
+          <td>
+            <FontAwesomeIcon icon={faTaxi} className="mr-2" />
+            Taxi
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faWifi} className="mr-2" />
+            Wifi
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faSmoking} className="mr-2" />
+            Smoke Room
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
+            Disable-people friendlly
+          </td>
+        </tr>
+        <tr className="bg-base-200">
+          <td>
+            <FontAwesomeIcon icon={faTaxi} className="mr-2" />
+            Taxi
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faWifi} className="mr-2" />
+            Wifi
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faSmoking} className="mr-2" />
+            Smoke Room
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
+            Disable-people friendlly
+          </td>
+        </tr>
+        <tr className="bg-base-200">
+          <td>
+            <FontAwesomeIcon icon={faTaxi} className="mr-2" />
+            Taxi
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faWifi} className="mr-2" />
+            Wifi
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faSmoking} className="mr-2" />
+            Smoke Room
+          </td>
+          <td>
+            <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
+            Disable-people friendlly
+          </td>
+        </tr>
+      </tbody>
+    </table>
   );
 }
