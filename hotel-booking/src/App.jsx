@@ -1,10 +1,11 @@
 // import Home from "./pages/Home";
-import HotelPage from "./pages/HotelPage";
+// import HotelPage from "./pages/HotelPage";
+import LoginPage from "../src/pages/LoginPage";
 
 function App() {
   return (
     <>
-      <HotelPage />
+      <LoginPage />
     </>
   );
 }
