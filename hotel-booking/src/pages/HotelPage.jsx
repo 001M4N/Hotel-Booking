@@ -5,6 +5,7 @@ import HotelDescription from "../components/HotelDescription";
 import List from "../components/List";
 import PropertyCard from "../components/PropertyCard";
 import Filter from "../components/Filter";
+import CommentsSection from "../components/CommentsSection";
 
 export default function HotelPage() {
   const Rooms = Array(10)
@@ -27,6 +28,7 @@ export default function HotelPage() {
       <HotelDescription />
       <Filter />
       <List items={Rooms} listTitle="Rooms" />
+      <CommentsSection />
       <Footer />
     </>
   );
