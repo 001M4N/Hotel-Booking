@@ -45,7 +45,7 @@ export default function Amenities() {
   };
 
   return (
-    <table className="table my-10 ml-5 w-1/2 h-20">
+    <table className="table my-10 ml-5 h-20">
       <tbody>
         <tr className="bg-base-200">
           <td>
