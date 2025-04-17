@@ -1,4 +1,4 @@
-import HotelCard from "./HotelCard";
+import PropertyCard from "./PropertyCard";
 
 function PopularHotels() {
   return (
@@ -7,20 +7,29 @@ function PopularHotels() {
         <h2 className="text-xl font-bold text-center">Popular Hotels</h2>
       </div>
       <div className="grid grid-cols-1 place-items-center md:grid-cols-3">
-        <HotelCard
+        <PropertyCard
           cardSize="w-100 sm:w-90"
           cardColor="bg-yellow-200"
           textColor="text-black"
+          cardTitle="Hotel Abbasi"
+          cardDescription="Total Price = $100"
+          buttonText="Hotel Page"
         />
-        <HotelCard
+        <PropertyCard
           cardSize="w-100 sm:w-90"
           cardColor="bg-yellow-200"
           textColor="text-black"
+          cardTitle="Hotel Abbasi"
+          cardDescription="Total Price = $100"
+          buttonText="Hotel Page"
         />
-        <HotelCard
+        <PropertyCard
           cardSize="w-100 sm:w-90"
           cardColor="bg-yellow-200"
           textColor="text-black"
+          cardTitle="Hotel Abbasi"
+          cardDescription="Total Price = $100"
+          buttonText="Hotel Page"
         />
       </div>
     </div>

@@ -3,9 +3,9 @@ export default function UserImage() {
     <div className="flex flex-col justify-center items-center">
       <img
         src="../../public/assets/woman.svg"
-        className="w-10 bg-white rounded-full p-1"
+        className="w-8 bg-white rounded-full p-1"
       />
-      <p className="text-sm"> Monica</p>
+      <p className="text-xs"> Monica</p>
     </div>
   );
 }
