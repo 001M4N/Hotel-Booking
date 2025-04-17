@@ -6,7 +6,7 @@ import SignInPage from "../src/pages/SignInPage";
 function App() {
   return (
     <>
-      <HotelPage />
+      <SignInPage />
     </>
   );
 }

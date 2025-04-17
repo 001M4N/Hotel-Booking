@@ -1,6 +1,7 @@
 import EmailInput from "./EmailInput";
 import PasswordInput from "./PasswordInput";
 import RememberMeButton from "./RememberMeButton";
+import TermsAndPolicyCheckBox from "./TermsAndPolicyCheckBox";
 
 export default function LoginSignInForm({ isLogin = true }) {
   const form = isLogin ? (
@@ -18,6 +19,7 @@ export default function LoginSignInForm({ isLogin = true }) {
       <EmailInput />
       <PasswordInput />
       <PasswordInput placeholderText="Repeat Password" />
+      <TermsAndPolicyCheckBox />
       <button className="btn mt-5 mb-2">Sign In</button>
       <div className="w-full flex justify-center items-center">
         <a className="link text-sm mt-5">Already Have an Account?</a>
