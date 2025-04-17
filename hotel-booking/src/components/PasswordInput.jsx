@@ -1,7 +1,7 @@
-export default function PasswordInput() {
+export default function PasswordInput({ placeholderText = "Password" }) {
   return (
     <div className="my-2 w-full">
-      <label className="input validator">
+      <label className="input validator w-full">
         <svg
           className="h-[1em] opacity-50"
           xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ export default function PasswordInput() {
         <input
           type="password"
           required
-          placeholder="Password"
+          placeholder={placeholderText}
           minlength="8"
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
