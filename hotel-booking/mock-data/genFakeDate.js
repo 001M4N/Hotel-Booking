@@ -34,7 +34,7 @@ function genRooms(numRooms) {
     rooms.push({
       id: i,
       name: getItemRandomly(roomNames),
-      price: Math.floor(Math.random() * 500) + 200,
+      price: Math.floor(Math.random() * 500) + 500,
       size: Math.floor(Math.random() * 7 + 2),
       reservedTime: [genReservedDate()],
       image: [...Array(Math.floor(Math.random() * 5) + 1)].map(() =>
