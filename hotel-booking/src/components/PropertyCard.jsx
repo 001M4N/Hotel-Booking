@@ -3,17 +3,15 @@ function PropertyCard({
   cardColor = "bg-slate-700",
   textColor = "text-white",
   cardTitle,
+  imgSrc,
   cardDescription,
   buttonText,
 }) {
+  console.log(imgSrc);
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
       <figure className="px-5 pt-10">
-        <img
-          src="../../public/assets/placeHolderImage.webp"
-          alt="Hotel Image"
-          className="rounded-xl"
-        />
+        <img src={imgSrc} alt="Hotel Image" className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className={`card-title ${textColor}`}>{cardTitle}</h2>

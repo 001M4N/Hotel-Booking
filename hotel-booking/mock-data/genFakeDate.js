@@ -24,7 +24,7 @@ export default function genHotels(count = 10) {
         min: Math.floor(Math.random() * 500),
         max: Math.floor(Math.random() * 500 + 1000),
       },
-      Image: getItemRandomly(hotelImages),
+      image: getItemRandomly(hotelImages),
     });
   }
   return hotels;
@@ -77,7 +77,7 @@ function genComments(count) {
   return hotelsComments;
 }
 
-const count = 20;
+const count = 200;
 const fakeDate = {
   hotels: genHotels(count),
   rooms: genRooms(count),

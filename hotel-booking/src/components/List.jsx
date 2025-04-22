@@ -9,6 +9,7 @@ function List({ items, listTitle }) {
         cardSize="w-50 sm:w-60"
         cardColor="bg-slate-700"
         cardTitle={item.name}
+        imgSrc={item.image}
         cardDescription={
           <>
             <p>
