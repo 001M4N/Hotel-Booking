@@ -7,7 +7,12 @@ function List({ items, listTitle }) {
       <PropertyCard
         key={item.id}
         isPopular={false}
-        cardTitle={item.name}
+        cardTitle={
+          <>
+            <HotelRating star={item.rating} />
+            <h2>{item.name}</h2>
+          </>
+        }
         imgSrc={item.image}
         cardDescription={`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}
         buttonText="Hotel Page"

@@ -15,7 +15,9 @@ function PropertyCard({
         <img src={imgSrc} alt="Hotel Image" className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className={`card-title ${textColor}`}>{cardTitle}</h2>
+        <div className={`card-title ${textColor} flex flex-col`}>
+          {cardTitle}
+        </div>
         <p className={`${textColor}`}>{cardDescription}</p>
         <div className="card-actions">
           <button className="btn btn-base-200">{buttonText}</button>
