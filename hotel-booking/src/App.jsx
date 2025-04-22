@@ -1,12 +1,9 @@
-import Home from "./pages/Home";
-import HotelPage from "./pages/HotelPage";
-import LoginPage from "../src/pages/LoginPage";
-import SignInPage from "../src/pages/SignInPage";
+import AppRouter from "./routes/AppRouter";
 
 function App() {
   return (
     <>
-      <SignInPage />
+      <AppRouter />
     </>
   );
 }
