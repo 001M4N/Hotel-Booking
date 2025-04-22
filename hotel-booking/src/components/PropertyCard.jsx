@@ -17,7 +17,7 @@ function PropertyCard({
       </figure>
       <div className="card-body items-center text-center">
         <h2 className={`card-title ${textColor}`}>{cardTitle}</h2>
-        <p className={`${textColor}`}>{cardDescription}</p>
+        <div className={`${textColor}`}>{cardDescription}</div>
         <div className="card-actions">
           <button className="btn btn-base-200">{buttonText}</button>
         </div>

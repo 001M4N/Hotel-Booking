@@ -4,27 +4,16 @@ import PopularHotels from "../components/PopularHotels";
 import List from "../components/List";
 import Footer from "../components/Footer";
 import PropertyCard from "../components/PropertyCard";
+import useAPICall from "../hooks/useAPICall";
 
 function Home() {
-  const hotels = Array(10)
-    .fill()
-    .map((_, index) => (
-      <PropertyCard
-        key={index}
-        cardSize="w-50 sm:w-60"
-        cardColor="bg-slate-700"
-        cardTitle="Hotel"
-        cardDescription="Price = $100"
-        buttonText="Hotel Page"
-      />
-    ));
-
+  const { data, loading, error } = useAPICall("http://localhost:3000/hotels");
   return (
     <div>
       <Header />
       <SearchBar />
       <PopularHotels />
-      <List items={hotels} listTitle="Hotels" />
+      {!loading && <List items={data} listTitle="Hotels" />}
       <Footer />
     </div>
   );

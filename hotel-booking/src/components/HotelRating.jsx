@@ -1,15 +1,16 @@
-export default function HotelRating() {
+export default function HotelRating({ star }) {
   return (
     <div className="rating">
-      <div className="mask mask-star" aria-label="1 star"></div>
-      <div className="mask mask-star" aria-label="2 star"></div>
-      <div
-        className="mask mask-star"
-        aria-label="3 star"
-        aria-current="true"
-      ></div>
-      <div className="mask mask-star" aria-label="4 star"></div>
-      <div className="mask mask-star" aria-label="5 star"></div>
+      {[1, 2, 3, 4, 5].map((_, index) => {
+        return (
+          <div
+            key={index}
+            className="mask mask-star"
+            aria-current={index === Math.floor(star) ? "true" : "false"}
+            aria-label={`${index} star`}
+          ></div>
+        );
+      })}
     </div>
   );
 }
