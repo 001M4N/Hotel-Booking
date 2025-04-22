@@ -1,13 +1,14 @@
 function PropertyCard({
-  cardSize = "w-80 sm:w-80",
-  cardColor = "bg-slate-700",
-  textColor = "text-white",
+  isPopular = false,
   cardTitle,
   imgSrc,
   cardDescription,
   buttonText,
 }) {
-  console.log(imgSrc);
+  const [cardSize, cardColor, textColor] = isPopular
+    ? ["w-100 sm:w-90", "bg-yellow-200", "text-black"]
+    : ["w-50 sm:w-60", "bg-slate-700", "text-white"];
+
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
       <figure className="px-5 pt-10">
@@ -15,7 +16,7 @@ function PropertyCard({
       </figure>
       <div className="card-body items-center text-center">
         <h2 className={`card-title ${textColor}`}>{cardTitle}</h2>
-        <div className={`${textColor}`}>{cardDescription}</div>
+        <p className={`${textColor}`}>{cardDescription}</p>
         <div className="card-actions">
           <button className="btn btn-base-200">{buttonText}</button>
         </div>

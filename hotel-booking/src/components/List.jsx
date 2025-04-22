@@ -6,18 +6,10 @@ function List({ items, listTitle }) {
     return (
       <PropertyCard
         key={item.id}
-        cardSize="w-50 sm:w-60"
-        cardColor="bg-slate-700"
+        isPopular={false}
         cardTitle={item.name}
         imgSrc={item.image}
-        cardDescription={
-          <>
-            <p>
-              {`Price Range: ${item.priceRange.min} - ${item.priceRange.max}`}
-            </p>
-            <HotelRating star={item.rating} />
-          </>
-        }
+        cardDescription={`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}
         buttonText="Hotel Page"
       />
     );
@@ -30,7 +22,6 @@ function List({ items, listTitle }) {
       </div>
       <div className="justify-center m-5 place-items-center grid gap-5 grid-cols-[repeat(auto-fit,13rem)] sm:grid-cols-[repeat(auto-fit,15rem)]">
         {itemsJsx}
-        "test"
       </div>
     </div>
   );

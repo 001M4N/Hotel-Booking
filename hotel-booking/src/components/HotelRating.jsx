@@ -1,4 +1,5 @@
 export default function HotelRating({ star }) {
+  console.log(star);
   return (
     <div className="rating">
       {[1, 2, 3, 4, 5].map((_, index) => {
@@ -6,7 +7,7 @@ export default function HotelRating({ star }) {
           <div
             key={index}
             className="mask mask-star"
-            aria-current={index === Math.floor(star) ? "true" : "false"}
+            aria-current={index + 1 === Math.floor(star) ? "true" : "false"}
             aria-label={`${index} star`}
           ></div>
         );
