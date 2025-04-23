@@ -12,7 +12,7 @@ export default function Carousel({ items }) {
     return (currentIndex + i) % arrayLength;
   });
 
-  const data = items.filter((_, i) => {
+  const slide = items.filter((_, i) => {
     return selectedIndices.includes(i);
   });
 
@@ -43,7 +43,7 @@ export default function Carousel({ items }) {
       >
         &lt;
       </button>
-      {data}
+      {slide}
       <button
         onClick={handleNextlick}
         className="btn btn-lg absolute bottom-1/2 right-2 opacity-50 rounded-full z-100"
