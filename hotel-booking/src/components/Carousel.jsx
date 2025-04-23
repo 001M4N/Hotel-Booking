@@ -16,6 +16,8 @@ export default function Carousel({ items }) {
     return selectedIndices.includes(i);
   });
 
+  console.log(currentIndex);
+
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -27,8 +29,8 @@ export default function Carousel({ items }) {
       ? setCurrentIndex(arrayLength - 1)
       : setCurrentIndex(currentIndex - 1);
   };
-  const handlenextlick = () => {
-    currentIndex === arrayLength
+  const handleNextlick = () => {
+    currentIndex === arrayLength - 1
       ? setCurrentIndex(0)
       : setCurrentIndex(currentIndex + 1);
   };
@@ -43,7 +45,7 @@ export default function Carousel({ items }) {
       </button>
       {data}
       <button
-        onClick={handlenextlick}
+        onClick={handleNextlick}
         className="btn btn-lg absolute bottom-1/2 right-2 opacity-50 rounded-full z-100"
       >
         &gt;
