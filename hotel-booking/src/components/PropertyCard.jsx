@@ -7,12 +7,16 @@ function PropertyCard({
 }) {
   const [cardSize, cardColor, textColor] = isPopular
     ? ["w-100 sm:w-90", "bg-yellow-200", "text-black"]
-    : ["w-50 sm:w-60", "bg-slate-700", "text-white"];
+    : ["w-80 sm:w-70", "bg-slate-700", "text-white"];
 
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
       <figure className="px-5 pt-10">
-        <img src={imgSrc} alt="Hotel Image" className="rounded-xl" />
+        <img
+          src={imgSrc}
+          alt="Hotel Image"
+          className="rounded-xl w-[200px] h-[150px]"
+        />
       </figure>
       <div className="card-body items-center text-center">
         <div className={`card-title ${textColor} flex flex-col`}>
