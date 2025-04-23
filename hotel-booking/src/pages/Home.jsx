@@ -12,7 +12,7 @@ function Home() {
     <div>
       <Header />
       <SearchBar />
-      <PopularHotels />
+      {!loading && <PopularHotels items={data} title="Popular Hotels" />}
       {!loading && <List items={data} listTitle="Hotels" />}
       <Footer />
     </div>

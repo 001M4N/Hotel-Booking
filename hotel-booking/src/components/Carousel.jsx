@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import PropertyCard from "./PropertyCard";
 
 export default function Carousel({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,7 +35,7 @@ export default function Carousel({ items }) {
   };
 
   return (
-    <div className="bg-white w-full flex justify-center gap-x-20 p-10 relative">
+    <div className="w-full flex justify-center gap-x-20 p-10 relative">
       <button
         onClick={handlePrevClick}
         className="btn btn-lg absolute bottom-1/2 left-2 opacity-50 rounded-full z-100"
