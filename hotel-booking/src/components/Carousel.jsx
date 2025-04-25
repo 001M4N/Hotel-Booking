@@ -15,13 +15,25 @@ export default function Carousel({ items }) {
     return selectedIndices.includes(i);
   });
 
-  console.log(currentIndex);
-
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevCurrentIndex) => {
+        prevCurrentIndex === arrayLength - 1
+          ? setCurrentIndex(0)
+          : setCurrentIndex(prevCurrentIndex + 1);
+      });
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [arrayLength]);
 
   const handlePrevClick = () => {
     currentIndex === 0
