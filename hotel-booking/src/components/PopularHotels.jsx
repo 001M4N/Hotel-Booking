@@ -7,7 +7,7 @@ function PopularHotels({ items, titles }) {
     return (
       <PropertyCard
         key={item.id}
-        isPopular={false}
+        isPopular={true}
         cardTitle={
           <>
             <HotelRating star={item.rating} />
@@ -24,7 +24,7 @@ function PopularHotels({ items, titles }) {
   return (
     <div className="w-full mt-6">
       <div className="divider mb-6">
-        <h2 className="text-xl font-bold text-center">{titles}</h2>
+        <h2 className="text-xl font-bold text-center">Popular Hotels</h2>
       </div>
       <Carousel items={itemsJsx} />
     </div>

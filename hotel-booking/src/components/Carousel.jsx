@@ -28,7 +28,7 @@ export default function Carousel({ items }) {
           ? setCurrentIndex(0)
           : setCurrentIndex(prevCurrentIndex + 1);
       });
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearInterval(interval);
