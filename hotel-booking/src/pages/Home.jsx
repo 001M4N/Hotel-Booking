@@ -14,11 +14,12 @@ function Home() {
     setSelectedProvince(selectedValue);
   };
 
-  if (!loading && !error) {
-    const selProvinceItems = data.filter((item) => {
-      return item.Province === selectedProvince;
-    });
-  }
+  const selProvinceItems =
+    !loading && !error
+      ? data.filter((item) => {
+          return item.Province === selectedProvince;
+        })
+      : [];
 
   return (
     <div>
