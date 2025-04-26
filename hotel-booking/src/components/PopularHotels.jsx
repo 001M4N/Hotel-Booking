@@ -2,7 +2,7 @@ import PropertyCard from "./PropertyCard";
 import HotelRating from "./HotelRating";
 import Carousel from "./Carousel";
 
-function PopularHotels({ items, titles }) {
+function PopularHotels({ items, loading, error }) {
   const itemsJsx = items.map((item) => {
     return (
       <PropertyCard
