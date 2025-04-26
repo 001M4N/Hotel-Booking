@@ -1,6 +1,6 @@
 import provinces from "../data/provinces";
 
-function SearchBar({ onSelect }) {
+function SearchBar({ onSelect, selectorValue }) {
   return (
     <div className="h-30 flex flex-col justify-center gap-x-5 gap-y-3 items-center sm:flex-row">
       <label className="input">
@@ -28,7 +28,7 @@ function SearchBar({ onSelect }) {
         onChange={(e) => onSelect(e.target.value)}
       >
         {provinces.map((value, index) => {
-          if (value === "Tehran") {
+          if (value === selectorValue) {
             return (
               <option key={index} selected="selected">
                 {value}

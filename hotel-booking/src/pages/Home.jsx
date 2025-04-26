@@ -20,7 +20,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <SearchBar onSelect={handleSelect} />
+      <SearchBar onSelect={handleSelect} selectorValue={selectedProvince} />
       <PopularHotels items={data} loading={loading} error={error} />
       <List items={data} loading={loading} error={error} listTitle="Hotels" />
       <Footer />
