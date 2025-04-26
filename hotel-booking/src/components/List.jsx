@@ -1,7 +1,23 @@
 import PropertyCard from "./PropertyCard";
 import HotelRating from "./HotelRating";
+import Loading from "./Loading";
 
-function List({ items, listTitle }) {
+function List({ items, loading, error, listTitle }) {
+  if (loading) {
+    return (
+      <div className="h-100">
+        <div className="divider divider mb-6">
+          <h2 className="text-xl font-bold text-center">{listTitle}</h2>
+        </div>
+        <Loading />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   const itemsJsx = items.map((item) => {
     return (
       <PropertyCard

@@ -13,7 +13,7 @@ function Home() {
       <Header />
       <SearchBar />
       <PopularHotels items={data} loading={loading} error={error} />
-      {!loading && <List items={data} listTitle="Hotels" />}
+      <List items={data} loading={loading} error={error} listTitle="Hotels" />
       <Footer />
     </div>
   );
