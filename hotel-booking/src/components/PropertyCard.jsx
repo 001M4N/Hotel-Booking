@@ -15,7 +15,7 @@ function PropertyCard({
         <img
           src={imgSrc}
           alt="Hotel Image"
-          className="rounded-xl w-full h-[150px]"
+          className="rounded-xl w-full h-[200px]"
         />
       </figure>
       <div className="card-body items-center text-center">
