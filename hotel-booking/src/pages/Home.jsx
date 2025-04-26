@@ -24,7 +24,11 @@ function Home() {
   return (
     <div>
       <Header />
-      <SearchBar onSelect={handleSelect} selectorValue={selectedProvince} />
+      <SearchBar
+        items={selProvinceItems}
+        onSelect={handleSelect}
+        selectorValue={selectedProvince}
+      />
       <PopularHotels items={selProvinceItems} loading={loading} error={error} />
       <List
         items={selProvinceItems}
