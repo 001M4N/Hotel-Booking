@@ -3,7 +3,7 @@ import HotelRating from "./HotelRating";
 import Carousel from "./Carousel";
 import Loading from "./Loading";
 
-function PopularHotels({ items, loading, error }) {
+function PopularHotels({ items, province, loading, error }) {
   if (loading) {
     return (
       <div className="h-100">
@@ -19,7 +19,11 @@ function PopularHotels({ items, loading, error }) {
     return <div>{error}</div>;
   }
 
-  const itemsJsx = items.map((item) => {
+  const selProvinceItems = items.filter((item) => {
+    return item.Province === province;
+  });
+
+  const selProvinceItemsJsx = selProvinceItems.map((item) => {
     return (
       <PropertyCard
         key={item.id}
@@ -42,7 +46,7 @@ function PopularHotels({ items, loading, error }) {
       <div className="divider mb-6">
         <h2 className="text-xl font-bold text-center">Popular Hotels</h2>
       </div>
-      <Carousel items={itemsJsx} />
+      <Carousel items={selProvinceItemsJsx} />
     </div>
   );
 }

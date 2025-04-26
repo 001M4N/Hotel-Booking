@@ -20,7 +20,12 @@ function Home() {
     <div>
       <Header />
       <SearchBar onSelect={handleSelect} selectorValue={selectedProvince} />
-      <PopularHotels items={data} loading={loading} error={error} />
+      <PopularHotels
+        items={data}
+        province={selectedProvince}
+        loading={loading}
+        error={error}
+      />
       <List items={data} loading={loading} error={error} listTitle="Hotels" />
       <Footer />
     </div>
