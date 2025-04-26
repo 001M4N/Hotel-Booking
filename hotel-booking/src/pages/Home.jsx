@@ -14,19 +14,23 @@ function Home() {
     setSelectedProvince(selectedValue);
   };
 
-  console.log(selectedProvince);
+  if (!loading && !error) {
+    const selProvinceItems = data.filter((item) => {
+      return item.Province === selectedProvince;
+    });
+  }
 
   return (
     <div>
       <Header />
       <SearchBar onSelect={handleSelect} selectorValue={selectedProvince} />
-      <PopularHotels
-        items={data}
-        province={selectedProvince}
+      <PopularHotels items={selProvinceItems} loading={loading} error={error} />
+      <List
+        items={selProvinceItems}
         loading={loading}
         error={error}
+        listTitle="Hotels"
       />
-      <List items={data} loading={loading} error={error} listTitle="Hotels" />
       <Footer />
     </div>
   );
