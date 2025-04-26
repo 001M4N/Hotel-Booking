@@ -1,3 +1,5 @@
+import provinces from "../data/provinces";
+
 function SearchBar() {
   return (
     <div className="h-30 flex flex-col justify-center gap-x-5 gap-y-3 items-center sm:flex-row">
@@ -22,8 +24,17 @@ function SearchBar() {
       </label>
 
       <select defaultValue="Tehran" className="select sm:w-3xs cursor-pointer">
-        <option>Tehran</option>
-        <option>Kish</option>
+        {provinces.map((value, index) => {
+          if (value === "Tehran") {
+            return (
+              <option key={index} selected="selected">
+                {value}
+              </option>
+            );
+          } else {
+            return <option key={index}>{value}</option>;
+          }
+        })}
       </select>
     </div>
   );
