@@ -3,7 +3,6 @@ import SearchBar from "../components/SearchBar";
 import PopularHotels from "../components/PopularHotels";
 import List from "../components/List";
 import Footer from "../components/Footer";
-import PropertyCard from "../components/PropertyCard";
 import useAPICall from "../hooks/useAPICall";
 import { useState } from "react";
 
