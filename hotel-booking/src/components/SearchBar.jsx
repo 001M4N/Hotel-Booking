@@ -25,18 +25,11 @@ function SearchBar({ onSelect, selectorValue }) {
 
       <select
         className="select sm:w-3xs cursor-pointer"
+        value={selectorValue}
         onChange={(e) => onSelect(e.target.value)}
       >
         {provinces.map((value, index) => {
-          if (value === selectorValue) {
-            return (
-              <option key={index} selected="selected">
-                {value}
-              </option>
-            );
-          } else {
-            return <option key={index}>{value}</option>;
-          }
+          return <option key={index}>{value}</option>;
         })}
       </select>
     </div>
