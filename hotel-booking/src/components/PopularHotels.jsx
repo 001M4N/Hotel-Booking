@@ -6,12 +6,12 @@ import Loading from "./Loading";
 function PopularHotels({ items, loading, error }) {
   if (loading) {
     return (
-      <>
+      <div className="h-100">
         <div className="divider mb-6">
           <h2 className="text-xl font-bold text-center">Popular Hotels</h2>
         </div>
         <Loading />
-      </>
+      </div>
     );
   }
 
