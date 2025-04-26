@@ -6,7 +6,7 @@ function PropertyCard({
   buttonText,
 }) {
   const [cardSize, cardColor, textColor] = isPopular
-    ? ["w-100 sm:w-90", "bg-yellow-200", "text-black"]
+    ? ["w-100 sm:w-90", "bg-amber-100", "text-black"]
     : ["w-80 sm:w-70", "bg-slate-700", "text-white"];
 
   return (
@@ -15,7 +15,7 @@ function PropertyCard({
         <img
           src={imgSrc}
           alt="Hotel Image"
-          className="rounded-xl w-[200px] h-[150px]"
+          className="rounded-xl w-full h-[150px]"
         />
       </figure>
       <div className="card-body items-center text-center">

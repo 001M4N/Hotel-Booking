@@ -6,7 +6,7 @@ export default function HotelRating({ star }) {
         return (
           <div
             key={index}
-            className="mask mask-star"
+            className="mask mask-star bg-yellow-400"
             aria-current={index + 1 === Math.floor(star) ? "true" : "false"}
             aria-label={`${index} star`}
           ></div>

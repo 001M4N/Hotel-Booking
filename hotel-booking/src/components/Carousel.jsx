@@ -4,7 +4,7 @@ export default function Carousel({ items }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
   const numItemsPerSlide =
-    width >= 1600 ? 4 : width >= 1200 ? 3 : width >= 800 ? 2 : 1;
+    width >= 2000 ? 4 : width >= 1200 ? 3 : width >= 800 ? 2 : 1;
 
   const arrayLength = items.length;
   const selectedIndices = Array.from({ length: numItemsPerSlide }, (_, i) => {
