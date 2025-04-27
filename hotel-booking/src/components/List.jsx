@@ -16,7 +16,14 @@ function List({ items, loading, error, listTitle }) {
   }
 
   if (error) {
-    return <div>{error.message}</div>;
+    return (
+      <>
+        <Divider title={listTitle} />
+        <div className="flex justify-center items-center py-10 text-xl">
+          {error.message}
+        </div>
+      </>
+    );
   }
 
   const itemsJsx = items.map((item) => {
