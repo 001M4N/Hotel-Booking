@@ -18,7 +18,7 @@ function PopularHotels({ items, loading, error }) {
     return (
       <div>
         <Divider title={"Popular Hotels"} />
-        <div className="flex justify-center items-center py-10 text-xl">
+        <div className="flex justify-center items-center text-xl h-100 text-red-500">
           {error.message}
         </div>
       </div>
