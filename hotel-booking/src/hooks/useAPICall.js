@@ -14,13 +14,20 @@ export default function useAPICall(url) {
         const json = await response.json();
         setData(json);
       } catch (err) {
-        setError(err);
+        if (err.message.includes("Failed to fetch")) {
+          setError(
+            new Error(
+              "Unable to connect to the server, please try agian later."
+            )
+          );
+        } else {
+          setError(err);
+        }
       } finally {
         setLoading(false);
       }
     })();
   }, [url]);
-  console.log(error);
 
   return { data, loading, error };
 }

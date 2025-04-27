@@ -2,6 +2,7 @@ import PropertyCard from "./PropertyCard";
 import HotelRating from "./HotelRating";
 import Loading from "./Loading";
 import Divider from "./Divider";
+import ErrorDisplay from "./ErrorDisplay";
 
 function List({ items, loading, error, listTitle }) {
   if (loading) {
@@ -17,12 +18,10 @@ function List({ items, loading, error, listTitle }) {
 
   if (error) {
     return (
-      <>
+      <div className="flex flex-col justify-center items-center">
         <Divider title={listTitle} />
-        <div className="flex justify-center items-center text-xl h-100 text-red-500">
-          {error.message}
-        </div>
-      </>
+        <ErrorDisplay message={error.message} />
+      </div>
     );
   }
 
