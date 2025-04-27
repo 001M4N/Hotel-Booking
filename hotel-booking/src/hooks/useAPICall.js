@@ -20,6 +20,7 @@ export default function useAPICall(url) {
       }
     })();
   }, [url]);
+  console.log(error);
 
   return { data, loading, error };
 }

@@ -15,7 +15,7 @@ function List({ items, loading, error, listTitle }) {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div>{error.message}</div>;
   }
 
   const itemsJsx = items.map((item) => {

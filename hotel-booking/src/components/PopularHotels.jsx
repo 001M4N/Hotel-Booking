@@ -2,21 +2,25 @@ import PropertyCard from "./PropertyCard";
 import HotelRating from "./HotelRating";
 import Carousel from "./Carousel";
 import Loading from "./Loading";
+import Divider from "./Divider";
 
 function PopularHotels({ items, loading, error }) {
   if (loading) {
     return (
       <div className="h-100">
-        <div className="divider mb-6">
-          <h2 className="text-xl font-bold text-center">Popular Hotels</h2>
-        </div>
+        <Divider title={"Popular Hotels"} />
         <Loading />
       </div>
     );
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <div>
+        <Divider title={"Popular Hotels"} />
+        <div>{error.message}</div>
+      </div>
+    );
   }
 
   const itemsJsx = items.map((item) => {
