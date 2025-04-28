@@ -2,7 +2,6 @@ import UserImage from "./UserImage";
 
 export default function Comment({ isReply = false }) {
   const indent = isReply ? "ml-20 -mt-5" : "ml-3";
-  console.log(isReply);
   const bgColor = isReply ? "bg-slate-950" : "bg-slate-800";
 
   return (

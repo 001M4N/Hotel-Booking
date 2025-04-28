@@ -9,7 +9,6 @@ function SearchBar({ items }) {
       return item.name.toLowerCase().startsWith(query.toLowerCase());
     }
   });
-  console.log(recommendations);
 
   const recommendationsJsx = recommendations.map((value, index) => {
     return (
