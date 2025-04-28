@@ -7,7 +7,17 @@ import PropertyCard from "../components/PropertyCard";
 import Filter from "../components/Filter";
 import CommentsSection from "../components/CommentsSection";
 
+import useAPICall from "../hooks/useAPICall";
+import { useParams } from "react-router-dom";
+
 export default function HotelPage() {
+  const { hotelId } = useParams();
+  const { hotelData, hotelDataLoading, hotelDataError } = useAPICall(
+    `http://localhost:3000/hotels/${hotelId}`
+  );
+  const { roomsData, roomsDataLoading, roomsDataError } = useAPICall(
+    `http://localhost:3000/rooms/${hotelId}`
+  );
   const Rooms = Array(10)
     .fill()
     .map((_, index) => (
@@ -27,7 +37,7 @@ export default function HotelPage() {
       <Hotelbanner />
       <HotelDescription />
       <Filter />
-      <List items={Rooms} listTitle="Rooms" />
+      {/* <List items={Rooms} listTitle="Rooms" /> */}
       <CommentsSection />
       <Footer />
     </>
