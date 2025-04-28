@@ -5,6 +5,8 @@ import List from "../components/List";
 import Footer from "../components/Footer";
 import useAPICall from "../hooks/useAPICall";
 import { useState } from "react";
+import Filter from "../components/Filter";
+import ProvinceSelector from "../components/ProvinceSelector";
 
 function Home() {
   const { data, loading, error } = useAPICall("http://localhost:3000/hotels");
@@ -24,11 +26,19 @@ function Home() {
   return (
     <div>
       <Header />
-      <SearchBar
+      {/* <SearchBar
         items={selProvinceItems}
         onSelect={handleSelect}
         selectorValue={selectedProvince}
-      />
+      /> */}
+      <Filter>
+        <SearchBar items={selProvinceItems} />
+        <ProvinceSelector
+          selectedValue={selectedProvince}
+          onSelect={handleSelect}
+        />
+      </Filter>
+
       <PopularHotels items={selProvinceItems} loading={loading} error={error} />
       <List
         items={selProvinceItems}

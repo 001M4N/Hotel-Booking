@@ -1,7 +1,6 @@
 import { useState } from "react";
-import provinces from "../data/provinces";
 
-function SearchBar({ items, onSelect, selectorValue }) {
+function SearchBar({ items }) {
   const [query, setQuery] = useState("");
 
   const recommendations = items.filter((item) => {
@@ -24,7 +23,6 @@ function SearchBar({ items, onSelect, selectorValue }) {
   const handleSearch = (value) => {
     setQuery(value);
   };
-  console.log(recommendationsJsx);
 
   return (
     <div className="h-30 flex flex-col justify-center gap-x-5 gap-y-3 items-center sm:flex-row">
@@ -59,16 +57,6 @@ function SearchBar({ items, onSelect, selectorValue }) {
           {recommendationsJsx}
         </ul>
       </label>
-
-      <select
-        className="select sm:w-3xs cursor-pointer"
-        value={selectorValue}
-        onChange={(e) => onSelect(e.target.value)}
-      >
-        {provinces.map((value, index) => {
-          return <option key={index}>{value}</option>;
-        })}
-      </select>
     </div>
   );
 }
