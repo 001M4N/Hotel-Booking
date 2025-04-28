@@ -10,6 +10,7 @@ import CommentsSection from "../components/CommentsSection";
 import useAPICall from "../hooks/useAPICall";
 import { useParams } from "react-router-dom";
 import Loading from "../components/Loading";
+import ErrorDisplay from "../components/ErrorDisplay";
 
 export default function HotelPage() {
   const { hotelId } = useParams();
@@ -36,7 +37,11 @@ export default function HotelPage() {
   return (
     <>
       <Header />
-      <Hotelbanner />
+      <Hotelbanner
+        data={hotelData}
+        loading={hotelDataLoading}
+        error={hotelDataError}
+      />
       {/* <HotelDescription />
       <Filter />
       <List items={Rooms} listTitle="Rooms" />
