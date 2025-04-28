@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function SearchBar({ items }) {
   const [query, setQuery] = useState("");
+  const [recomVisible, setRecomVisible] = useState(false);
 
   const recommendations = items.filter((item) => {
     if (query != "") {
@@ -14,7 +15,7 @@ function SearchBar({ items }) {
     return (
       <li
         key={index}
-        className="flex justify-center items-center py-1
+        className="flex justify-center items-center py-2
          text-white text-base hover:bg-blue-300"
       >
         {value.name}
@@ -24,6 +25,13 @@ function SearchBar({ items }) {
 
   const handleSearch = (value) => {
     setQuery(value);
+  };
+
+  const hadleFocus = () => {
+    setRecomVisible(true);
+  };
+  const hadleBlur = () => {
+    setRecomVisible(false);
   };
 
   return (
@@ -53,10 +61,15 @@ function SearchBar({ items }) {
         onChange={(e) => {
           handleSearch(e.target.value);
         }}
+        onFocus={hadleFocus}
+        onBlur={hadleBlur}
       />
 
-      {recommendationsJsx.length != 0 && (
-        <ul className="absolute w-full top-full left-0 z-101 bg-base-200 mt-[1px] overflow-y-auto max-h-30 border-x border-b rounded-md">
+      {recommendationsJsx.length != 0 && recomVisible && (
+        <ul
+          className="absolute w-full top-full left-0 z-101 bg-base-200
+         overflow-y-auto max-h-30 border border-b rounded-md"
+        >
           {recommendationsJsx}
         </ul>
       )}
