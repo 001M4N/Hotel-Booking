@@ -8,12 +8,14 @@ function SearchBar({ items }) {
       return item.name.toLowerCase().startsWith(query.toLowerCase());
     }
   });
+  console.log(recommendations);
 
   const recommendationsJsx = recommendations.map((value, index) => {
     return (
       <li
         key={index}
-        className="flex justify-center items-center border-y h-10"
+        className="flex justify-center items-center py-1
+         text-white text-base hover:bg-blue-300"
       >
         {value.name}
       </li>
@@ -25,7 +27,7 @@ function SearchBar({ items }) {
   };
 
   return (
-    <label className="input w-xs sm:w-md relative">
+    <label className="input w-xs sm:w-md relative z-100">
       <svg
         className="h-[1em] opacity-50"
         xmlns="http://www.w3.org/2000/svg"
@@ -52,9 +54,12 @@ function SearchBar({ items }) {
           handleSearch(e.target.value);
         }}
       />
-      <ul className="absolute bg-black w-full top-full left-0 z-100 text-lg rounded-sm text-white">
-        {recommendationsJsx}
-      </ul>
+
+      {recommendationsJsx.length != 0 && (
+        <ul className="absolute w-full top-full left-0 z-101 bg-base-200 mt-[1px] overflow-y-auto max-h-30 border-x border-b rounded-md">
+          {recommendationsJsx}
+        </ul>
+      )}
     </label>
   );
 }

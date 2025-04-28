@@ -77,7 +77,7 @@ function genComments(count) {
   return hotelsComments;
 }
 
-const count = 200;
+const count = 1000;
 const fakeDate = {
   hotels: genHotels(count),
   rooms: genRooms(count),
