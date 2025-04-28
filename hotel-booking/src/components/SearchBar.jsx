@@ -25,7 +25,7 @@ function SearchBar({ items }) {
   };
 
   return (
-    <label className="input sm:w-md relative">
+    <label className="input w-xs sm:w-md relative">
       <svg
         className="h-[1em] opacity-50"
         xmlns="http://www.w3.org/2000/svg"
