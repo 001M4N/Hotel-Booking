@@ -22,15 +22,9 @@ function Home() {
           return item.Province === selectedProvince;
         })
       : [];
-
   return (
     <div>
       <Header />
-      {/* <SearchBar
-        items={selProvinceItems}
-        onSelect={handleSelect}
-        selectorValue={selectedProvince}
-      /> */}
       <Filter>
         <SearchBar items={selProvinceItems} />
         <ProvinceSelector
@@ -38,7 +32,6 @@ function Home() {
           onSelect={handleSelect}
         />
       </Filter>
-
       <PopularHotels items={selProvinceItems} loading={loading} error={error} />
       <List
         items={selProvinceItems}

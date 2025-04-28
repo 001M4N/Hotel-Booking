@@ -1,11 +1,11 @@
 import provinces from "../data/provinces";
 
-export default function ProvinceSelector({ selectorValue, onSelect }) {
+export default function ProvinceSelector({ selectedValue, onSelect }) {
   return (
     <label>
       <select
         className="select sm:w-3xs cursor-pointer"
-        value={selectorValue}
+        value={selectedValue}
         onChange={(e) => onSelect(e.target.value)}
       >
         {provinces.map((value, index) => {
