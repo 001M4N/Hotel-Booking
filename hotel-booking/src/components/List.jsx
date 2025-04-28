@@ -29,6 +29,7 @@ function List({ items, loading, error, listTitle }) {
     return (
       <PropertyCard
         key={item.id}
+        hotelId={item.id}
         isPopular={false}
         cardTitle={
           <>

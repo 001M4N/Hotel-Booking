@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 function PropertyCard({
+  hotelId,
   isPopular = false,
   cardTitle,
   imgSrc,
@@ -24,7 +27,9 @@ function PropertyCard({
         </div>
         <p className={`${textColor}`}>{cardDescription}</p>
         <div className="card-actions">
-          <button className="btn btn-base-200">{buttonText}</button>
+          <Link to={`/hotelPage/${hotelId}`}>
+            <button className="btn btn-base-200">{buttonText}</button>
+          </Link>
         </div>
       </div>
     </div>

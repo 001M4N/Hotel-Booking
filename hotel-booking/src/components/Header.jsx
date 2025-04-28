@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <div className="navbar bg-base-200 shadow-sm">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">Hotel Booking</a>
+        <Link to={"/"}>
+          <button className="btn btn-ghost btn-xl">Hotel Booking</button>
+        </Link>
       </div>
       <div className="navbar-end">
-        <a className="btn">Sign in/up</a>
+        <button className="btn btn-lg">Sign in/up</button>
       </div>
     </div>
   );

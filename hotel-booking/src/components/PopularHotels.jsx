@@ -28,6 +28,7 @@ function PopularHotels({ items, loading, error }) {
     return (
       <PropertyCard
         key={item.id}
+        hotelId={item.id}
         isPopular={true}
         cardTitle={
           <>
