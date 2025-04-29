@@ -28,7 +28,6 @@ function PopularHotels({ items, loading, error }) {
     return (
       <PropertyCard
         key={item.id}
-        hotelId={item.id}
         isPopular={true}
         cardTitle={
           <>
@@ -38,6 +37,7 @@ function PopularHotels({ items, loading, error }) {
         }
         imgSrc={item.image}
         cardDescription={`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}
+        buttonLink={`/hotelPage/${item.id}`}
         buttonText="Hotel Page"
       />
     );
