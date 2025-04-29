@@ -4,7 +4,7 @@ import Loading from "./Loading";
 import Divider from "./Divider";
 import ErrorDisplay from "./ErrorDisplay";
 
-function List({ items, loading, error, listTitle }) {
+function List({ items, loading, error, listTitle, isForHotels = true }) {
   if (loading) {
     return (
       <div className="h-100">
@@ -25,24 +25,36 @@ function List({ items, loading, error, listTitle }) {
     );
   }
 
-  const itemsJsx = items.map((item) => {
-    return (
-      <PropertyCard
-        key={item.id}
-        hotelId={item.id}
-        isPopular={false}
-        cardTitle={
-          <>
-            <HotelRating star={item.rating} />
-            <h2 className="whitespace-nowrap">{item.name}</h2>
-          </>
-        }
-        imgSrc={item.image}
-        cardDescription={`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}
-        buttonText="Hotel Page"
-      />
-    );
-  });
+  const itemsJsx = isForHotels
+    ? items.map((item) => {
+        return (
+          <PropertyCard
+            key={item.id}
+            hotelId={item.id}
+            isPopular={false}
+            cardTitle={
+              <>
+                <HotelRating star={item.rating} />
+                <h2 className="whitespace-nowrap">{item.name}</h2>
+              </>
+            }
+            imgSrc={item.image}
+            cardDescription={`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}
+            buttonText="Hotel Page"
+          />
+        );
+      })
+    : items.rooms.map((item) => {
+        return (
+          <PropertyCard
+            key={item.id}
+            cardTitle={item.name}
+            imgSrc={item.image[0]}
+            cardDescription={""}
+            buttonText={""}
+          />
+        );
+      });
 
   return (
     <div className="my-10">

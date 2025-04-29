@@ -34,7 +34,13 @@ export default function HotelPage() {
         <Calendar />
         <Calendar />
       </Filter>
-      <List />
+      <List
+        items={roomsData}
+        loading={roomsDataLoading}
+        error={roomsDataError}
+        listTitle={"Rooms"}
+        isForHotels={false}
+      />
       <CommentsSection />
       <Footer />
     </>
