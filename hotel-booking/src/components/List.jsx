@@ -30,7 +30,6 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
         return (
           <PropertyCard
             key={item.id}
-            hotelId={item.id}
             isPopular={false}
             cardTitle={
               <>
@@ -39,7 +38,12 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
               </>
             }
             imgSrc={item.image}
-            cardDescription={`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}
+            cardDescription={
+              <>
+                <p>{`Price Range: $${item.priceRange.min} - $${item.priceRange.max}`}</p>
+              </>
+            }
+            buttonLink={`/hotelPage/${item.id}`}
             buttonText="Hotel Page"
           />
         );
@@ -50,8 +54,14 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
             key={item.id}
             cardTitle={item.name}
             imgSrc={item.image[0]}
-            cardDescription={""}
-            buttonText={""}
+            cardDescription={
+              <>
+                <p>{`Price: $${item.price}`}</p>
+                <p>{`Size: ${item.size} person(s)`}</p>
+              </>
+            }
+            buttonText={"Book"}
+            buttonLink={""}
           />
         );
       });

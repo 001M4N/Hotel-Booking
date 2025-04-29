@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import Carousel from "./Carousel";
 
 function PropertyCard({
-  hotelId,
   isPopular = false,
   cardTitle,
   imgSrc,
   cardDescription,
   buttonText,
+  buttonLink,
 }) {
   const [cardSize, cardColor, textColor] = isPopular
     ? ["w-100 sm:w-90", "bg-amber-100", "text-black"]
@@ -26,9 +26,9 @@ function PropertyCard({
         <div className={`card-title ${textColor} flex flex-col`}>
           {cardTitle}
         </div>
-        <p className={`${textColor}`}>{cardDescription}</p>
+        <div className={`text-base ${textColor}`}>{cardDescription}</div>
         <div className="card-actions">
-          <Link to={`/hotelPage/${hotelId}`}>
+          <Link to={buttonLink}>
             <button className="btn btn-base-200">{buttonText}</button>
           </Link>
         </div>
