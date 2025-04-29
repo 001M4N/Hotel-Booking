@@ -18,11 +18,11 @@ function PropertyCard({
       <Carousel
         items={imgSrc.map((src) => {
           return (
-            <figure className="px-5 pt-10">
+            <figure className="w-full">
               <img
                 src={src}
                 alt="Hotel Image"
-                className="rounded-xl w-full h-[200px]"
+                className="rounded-2xl w-full h-[250px] p-2"
               />
             </figure>
           );

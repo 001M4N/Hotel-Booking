@@ -61,17 +61,21 @@ export default function Carousel({ items, isForImage = false }) {
   };
 
   return (
-    <div className="w-full flex justify-center gap-x-20 p-1 relative">
+    <div className="w-full flex justify-center gap-x-20 relative">
       <button
         onClick={handlePrevClick}
-        className="btn btn-sm absolute bottom-1/2 left-2 opacity-50 rounded-full z-100"
+        className={`btn ${
+          !isForImage ? "btn-xl" : "btn-xs"
+        } absolute bottom-1/2 left-2 opacity-30 hover:opacity-70 rounded-full z-100`}
       >
         &lt;
       </button>
       {slide}
       <button
         onClick={handleNextlick}
-        className="btn btn-sm absolute bottom-1/2 right-2 opacity-50 rounded-full z-100"
+        className={`btn ${
+          !isForImage ? "btn-xl" : "btn-xs"
+        } absolute bottom-1/2 right-2 opacity-30 hover:opacity-70 rounded-full z-100`}
       >
         &gt;
       </button>
