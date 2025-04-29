@@ -1,16 +1,15 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Hotelbanner from "../components/Hotelbanner";
-import HotelDescription from "../components/HotelDescription";
-import List from "../components/List";
-import PropertyCard from "../components/PropertyCard";
-import Filter from "../components/Filter";
-import CommentsSection from "../components/CommentsSection";
-
 import useAPICall from "../hooks/useAPICall";
 import { useParams } from "react-router-dom";
-import Loading from "../components/Loading";
-import ErrorDisplay from "../components/ErrorDisplay";
+import Header from "../components/Header";
+import Hotelbanner from "../components/Hotelbanner";
+import HotelDescription from "../components/HotelDescription";
+import Filter from "../components/Filter";
+import NumInput from "../components/NumInput";
+import Calendar from "../components/Calendar";
+import List from "../components/List";
+import PropertyCard from "../components/PropertyCard";
+import CommentsSection from "../components/CommentsSection";
+import Footer from "../components/Footer";
 
 export default function HotelPage() {
   const { hotelId } = useParams();
@@ -21,19 +20,6 @@ export default function HotelPage() {
     `http://localhost:3000/rooms/${hotelId}`
   );
 
-  // const Rooms = Array(10)
-  //   .fill()
-  //   .map((_, index) => (
-  //     <PropertyCard
-  //       key={index}
-  //       cardSize="w-50 sm:w-60"
-  //       cardColor="bg-slate-700"
-  //       cardTitle="King Room"
-  //       cardDescription="Total Price = $100"
-  //       buttonText="Book"
-  //     />
-  //   ));
-
   return (
     <>
       <Header />
@@ -42,10 +28,14 @@ export default function HotelPage() {
         loading={hotelDataLoading}
         error={hotelDataError}
       />
-      {/* <HotelDescription />
-      <Filter />
-      <List items={Rooms} listTitle="Rooms" />
-      <CommentsSection /> */}
+      <HotelDescription />
+      <Filter>
+        <NumInput />
+        <Calendar />
+        <Calendar />
+      </Filter>
+      <List />
+      <CommentsSection />
       <Footer />
     </>
   );
