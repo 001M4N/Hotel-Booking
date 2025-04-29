@@ -15,13 +15,20 @@ function PropertyCard({
 
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
-      <figure className="px-5 pt-10">
-        <img
-          src={imgSrc}
-          alt="Hotel Image"
-          className="rounded-xl w-full h-[200px]"
-        />
-      </figure>
+      <Carousel
+        items={imgSrc.map((src) => {
+          return (
+            <figure className="px-5 pt-10">
+              <img
+                src={src}
+                alt="Hotel Image"
+                className="rounded-xl w-full h-[200px]"
+              />
+            </figure>
+          );
+        })}
+        isForImage={true}
+      />
       <div className="card-body items-center text-center">
         <div className={`card-title ${textColor} flex flex-col`}>
           {cardTitle}

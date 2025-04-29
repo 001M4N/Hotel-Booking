@@ -53,7 +53,7 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
           <PropertyCard
             key={item.id}
             cardTitle={item.name}
-            imgSrc={item.image[0]}
+            imgSrc={item.image}
             cardDescription={
               <>
                 <p>{`Price: $${item.price}`}</p>
