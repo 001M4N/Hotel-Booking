@@ -26,7 +26,7 @@ function PropertyCard({
         <div className={`card-title ${textColor} flex flex-col`}>
           {cardTitle}
         </div>
-        <div className={`text-base ${textColor}`}>{cardDescription}</div>
+        <div className={`text-lg ${textColor}`}>{cardDescription}</div>
         <div className="card-actions">
           <Link to={buttonLink}>
             <button className="btn btn-base-200">{buttonText}</button>
