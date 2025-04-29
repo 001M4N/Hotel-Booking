@@ -1,10 +1,21 @@
 import { useEffect, useState } from "react";
 
-export default function Carousel({ items }) {
+export default function Carousel({ items, isForImage = false }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [width, setWidth] = useState(window.innerWidth);
-  const numItemsPerSlide =
-    width >= 2000 ? 4 : width >= 1200 ? 3 : width >= 800 ? 2 : 1;
+
+  // if the Carousel is used for images, then each slide has one item,
+  // otherwise, according to the window width, the number of the items
+  // in each slide, will be calculated
+  const numItemsPerSlide = isForImage
+    ? 1
+    : width >= 2000
+    ? 4
+    : width >= 1200
+    ? 3
+    : width >= 800
+    ? 2
+    : 1;
 
   const arrayLength = items.length;
   const selectedIndices = Array.from({ length: numItemsPerSlide }, (_, i) => {
@@ -21,19 +32,22 @@ export default function Carousel({ items }) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // if Carousel isForImage, then the automatic sliding will be off
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevCurrentIndex) => {
-        prevCurrentIndex === arrayLength - 1
-          ? setCurrentIndex(0)
-          : setCurrentIndex(prevCurrentIndex + 1);
-      });
-    }, 4000);
-
+    let interval;
+    if (!isForImage) {
+      interval = setInterval(() => {
+        setCurrentIndex((prevCurrentIndex) => {
+          prevCurrentIndex === arrayLength - 1
+            ? setCurrentIndex(0)
+            : setCurrentIndex(prevCurrentIndex + 1);
+        });
+      }, 4000);
+    }
     return () => {
       clearInterval(interval);
     };
-  }, [arrayLength]);
+  }, [arrayLength, isForImage]);
 
   const handlePrevClick = () => {
     currentIndex === 0
