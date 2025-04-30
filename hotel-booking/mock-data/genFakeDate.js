@@ -6,6 +6,7 @@ import genReservedDate from "./genReservedDate.js";
 import { hotelComments } from "./hotelComments.js";
 import { managerReplies } from "./hotelComments.js";
 import LatLong from "./latLong.js";
+import amenities from "./amenities.js";
 
 function getItemRandomly(array) {
   const randomIndex = Math.floor(Math.random() * array.length);
@@ -29,6 +30,9 @@ export default function genHotels(count = 10) {
         return getItemRandomly(hotelImages);
       }),
       latLong: getItemRandomly(LatLong),
+      amenities: [...Array(Math.floor(Math.random() * 10) + 3)].map(() =>
+        getItemRandomly(amenities)
+      ),
     });
   }
   return hotels;
