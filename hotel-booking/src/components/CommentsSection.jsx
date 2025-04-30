@@ -1,6 +1,7 @@
 import Comment from "./comment";
 import Divider from "./Divider";
 import Loading from "./Loading";
+import ErrorDisplay from "./ErrorDisplay";
 
 export default function CommentsSection({ items, loading, error }) {
   if (loading) {
@@ -16,7 +17,6 @@ export default function CommentsSection({ items, loading, error }) {
     return (
       <div className="bg-base-300 p-5">
         <Divider title={"Comments"} />
-        <Loading />
         <ErrorDisplay message={error.message} />
       </div>
     );
