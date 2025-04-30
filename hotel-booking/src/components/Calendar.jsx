@@ -1,3 +1,3 @@
 export default function Calendar() {
-  return <input type="date" className="input" />;
+  return <input type="date" className="input input-lg" />;
 }
