@@ -45,7 +45,7 @@ export default function Amenities() {
   };
 
   return (
-    <table className="table my-10 ml-5 h-20">
+    <table className="table h-10 w-1/2">
       <tbody>
         <tr className="bg-base-200">
           <td>
@@ -57,48 +57,14 @@ export default function Amenities() {
             Wifi
           </td>
           <td>
-            <FontAwesomeIcon icon={faSmoking} className="mr-2" />
-            Smoke Room
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
-            Disable-people friendlly
+            <FontAwesomeIcon icon={faWifi} className="mr-2" />
+            Wifi
           </td>
         </tr>
         <tr className="bg-base-200">
           <td>
             <FontAwesomeIcon icon={faTaxi} className="mr-2" />
             Taxi
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWifi} className="mr-2" />
-            Wifi
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faSmoking} className="mr-2" />
-            Smoke Room
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
-            Disable-people friendlly
-          </td>
-        </tr>
-        <tr className="bg-base-200">
-          <td>
-            <FontAwesomeIcon icon={faTaxi} className="mr-2" />
-            Taxi
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWifi} className="mr-2" />
-            Wifi
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faSmoking} className="mr-2" />
-            Smoke Room
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWheelchair} className="mr-2" />
-            Disable-people friendlly
           </td>
         </tr>
       </tbody>

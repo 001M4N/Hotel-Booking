@@ -6,7 +6,7 @@ import ErrorDisplay from "./ErrorDisplay";
 export default function CommentsSection({ items, loading, error }) {
   if (loading) {
     return (
-      <div className="bg-base-300 p-5">
+      <div className="bg-base-100 p-5">
         <Divider title={"Comments"} />
         <Loading />
       </div>
@@ -15,7 +15,7 @@ export default function CommentsSection({ items, loading, error }) {
 
   if (error) {
     return (
-      <div className="bg-base-300 p-5">
+      <div className="bg-base-100 p-5">
         <Divider title={"Comments"} />
         <ErrorDisplay message={error.message} />
       </div>
@@ -32,7 +32,7 @@ export default function CommentsSection({ items, loading, error }) {
   });
 
   return (
-    <div className="bg-base-300 p-5">
+    <div className="bg-base-100 p-5">
       <Divider title={"Comments"} />
       {commentJsx}
     </div>

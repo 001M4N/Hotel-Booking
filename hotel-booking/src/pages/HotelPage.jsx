@@ -32,7 +32,11 @@ export default function HotelPage() {
         loading={hotelDataLoading}
         error={hotelDataError}
       />
-      <HotelDescription />
+      <HotelDescription
+        data={hotelData}
+        loading={hotelDataLoading}
+        error={hotelDataError}
+      />
       <Filter>
         <NumInput />
         <Calendar />
