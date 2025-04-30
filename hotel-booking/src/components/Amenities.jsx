@@ -21,53 +21,84 @@ import {
   faDrumstickBite,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Amenities() {
+export default function Amenities({ amenitiesList }) {
   const icons = {
-    Wifi: "faWifi",
-    Parking: "faParking",
-    Wheelchair: "faWheelchair",
-    Elevator: "faElevator",
-    KitMedical: "faKitMedical",
-    Taxi: "faTaxi",
-    SwimmingPool: "faSwimmingPool",
-    Spa: "faSpa",
-    Tv: "faTv",
-    Coffee: "faCoffee",
-    Suitcase: "faSuitcase",
-    Bell: "faBell",
-    BowlFood: "faBowlFood",
-    DrumstickBite: "faDrumstickBite",
-    Book: "faBook",
-    Mosque: "faMosque",
-    Tree: "faTree",
-    Fire: "faFire",
-    Smoking: "faSmoking",
+    Wifi: faWifi,
+    Parking: faParking,
+    Wheelchair: faWheelchair,
+    Elevator: faElevator,
+    KitMedical: faKitMedical,
+    Taxi: faTaxi,
+    SwimmingPool: faSwimmingPool,
+    Spa: faSpa,
+    Tv: faTv,
+    Coffee: faCoffee,
+    Suitcase: faSuitcase,
+    Bell: faBell,
+    BowlFood: faBowlFood,
+    DrumstickBite: faDrumstickBite,
+    Book: faBook,
+    Mosque: faMosque,
+    Tree: faTree,
+    Fire: faFire,
+    Smoking: faSmoking,
   };
 
+  const iconDefenition = {
+    Wifi: "Wifi",
+    Parking: "Free Parking Place",
+    Wheelchair: "Facilities for Disable People",
+    Elevator: "Elevator",
+    KitMedical: "On-Site Doctor",
+    Taxi: "Taxi",
+    SwimmingPool: "Swimming Pool",
+    Spa: "Spa",
+    Tv: "TV",
+    Coffee: "Café",
+    Suitcase: "Luggage Storage",
+    Bell: "Late Arrival",
+    BowlFood: "Buffet  Breakfast",
+    DrumstickBite: "Buffet Lunch",
+    Book: "Library",
+    Mosque: "Mosque",
+    Tree: "Green Place",
+    Fire: "Fire Place",
+    Smoking: "Smoking Room",
+  };
+
+  //showing amenities in custom number of cols
+  const numCols = 3;
+  let tmp_cols = [];
+  let tmp_rows = [];
+
+  const amenitiesJsx = amenitiesList.map((item, index) => {
+    if (tmp_cols.length % numCols !== 0) {
+      tmp_cols.push(
+        <td className="text-center align-middle h-15">
+          <FontAwesomeIcon icon={icons[item]} className="mr-2" />
+          {iconDefenition[item]}
+        </td>
+      );
+    } else {
+      tmp_rows.push(<tr className="bg-base-200">{tmp_cols}</tr>);
+      tmp_cols = [];
+      tmp_cols.push(
+        <td className="text-center align-middle h-15">
+          <FontAwesomeIcon icon={icons[item]} className="mr-2" />
+          {iconDefenition[item]}
+        </td>
+      );
+    }
+
+    if (index + 1 === amenitiesList.length) {
+      tmp_rows.push(<tr className="bg-base-200">{tmp_cols}</tr>);
+      return tmp_rows;
+    }
+  });
+  console.log(amenitiesJsx);
   return (
-    <table className="table h-10 w-1/2">
-      <tbody>
-        <tr className="bg-base-200">
-          <td>
-            <FontAwesomeIcon icon={faTaxi} className="mr-2" />
-            Taxi
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWifi} className="mr-2" />
-            Wifi
-          </td>
-          <td>
-            <FontAwesomeIcon icon={faWifi} className="mr-2" />
-            Wifi
-          </td>
-        </tr>
-        <tr className="bg-base-200">
-          <td>
-            <FontAwesomeIcon icon={faTaxi} className="mr-2" />
-            Taxi
-          </td>
-        </tr>
-      </tbody>
+    <table className="table text-base w-1/2">
+      <tbody>{amenitiesJsx}</tbody>
     </table>
   );
 }

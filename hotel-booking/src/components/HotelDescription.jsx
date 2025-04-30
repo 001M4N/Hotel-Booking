@@ -21,8 +21,11 @@ export default function HotelDescription({ data, loading, error }) {
   }
 
   return (
-    <div className="w-full flex justify-evenly items-center flex-col lg:flex-row gap-x-5 m-15 justify-between">
-      <Amenities />
+    <div
+      className="w-full flex justify-evenly items-center flex-col
+     lg:flex-row gap-x-5 m-15 justify-between"
+    >
+      <Amenities amenitiesList={data.amenities} />
       <Map
         lat={data.latLong.lat}
         long={data.latLong.long}
