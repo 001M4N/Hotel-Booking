@@ -1,15 +1,43 @@
 export default function NumInput() {
+  const options = [
+    "1 Adult",
+    "2 Adults",
+    "3 Adults",
+    "4 Adults",
+    "1 Adult, 1 Child",
+    "1 Adult, 2 Children",
+    "1 Adult, 3 Children",
+    "1 Adult, 4 Children",
+    "2 Adults, 1 Child",
+    "2 Adults, 2 Children",
+    "2 Adults, 3 Children",
+    "2 Adults, 4 Children",
+    "3 Adults, 1 Child",
+    "3 Adults, 2 Children",
+    "3 Adults, 3 Children",
+    "3 Adults, 4 Children",
+    "4 Adults, 1 Child",
+    "4 Adults, 2 Children",
+    "4 Adults, 3 Children",
+    "4 Adults, 4 Children",
+  ];
+
   return (
-    <div className="m-2">
-      <button className="btn btn-lg bg-slate-600 h-7 mx-1 w-12">-</button>
-      <select className="select select-ghost bg-slate-600 h-7 mx-2 w-40">
-        <option>1 adult</option>
-        <option>2 adults</option>
-        <option>3 adults</option>
-        <option>4 adults</option>
-        <option>4 adults, 1 Child</option>
+    <div className="m-2 flex justify-center items-center w-1/4">
+      <button className="btn btn-primary h-7 mr-5 w-12 h-12 rounded-full">
+        <span className="text-3xl">-</span>
+      </button>
+      <select
+        defaultValue="Pick a text editor"
+        className="select select-primary select-lg w-full"
+      >
+        {options.map((value) => {
+          return <option>{value}</option>;
+        })}
       </select>
-      <button className="btn btn-lg bg-slate-600 h-7 mx-1 w-12">+</button>
+      <button className="btn btn-primary h-7 ml-5 w-12 h-12 rounded-full">
+        <span className="text-3xl">+</span>
+      </button>
     </div>
   );
 }
