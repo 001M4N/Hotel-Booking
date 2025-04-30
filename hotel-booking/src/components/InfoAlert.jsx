@@ -1,7 +1,10 @@
 export default function InfoAlert({ message }) {
   return (
     <div>
-      <div role="alert" className="alert alert-info">
+      <div
+        role="alert"
+        className="alert alert-info flex text-lg justify-center items-center"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

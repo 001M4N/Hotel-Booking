@@ -25,10 +25,28 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
       </div>
     );
   }
-  console.log(items);
-  // if items is empty
-  if (items.length === 0) {
-    return <InfoAlert message={"No items are currently available."} />;
+
+  // if Hotel list is empty
+  if (isForHotels && items.length === 0) {
+    return (
+      <>
+        <Divider title={listTitle} />
+        <div className="flex justify-center items-center">
+          <InfoAlert message={"No items are currently available."} />
+        </div>
+      </>
+    );
+  }
+  // if Room lis is empty
+  if (!isForHotels && items.rooms.length === 0) {
+    return (
+      <>
+        <Divider title={listTitle} />
+        <div className="flex justify-center items-center">
+          <InfoAlert message={"No items are currently available."} />
+        </div>
+      </>
+    );
   }
 
   const itemsJsx = isForHotels
