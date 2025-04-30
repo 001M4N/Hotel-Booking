@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { v4 as uuidv4 } from "uuid";
 import {
   faTaxi,
   faWifi,
@@ -74,30 +75,37 @@ export default function Amenities({ amenitiesList }) {
   const amenitiesJsx = amenitiesList.map((item, index) => {
     if (tmp_cols.length % numCols !== 0) {
       tmp_cols.push(
-        <td className="text-center align-middle h-15">
+        <td key={uuidv4()} className="text-center align-middle h-18">
           <FontAwesomeIcon icon={icons[item]} className="mr-2" />
           {iconDefenition[item]}
         </td>
       );
     } else {
-      tmp_rows.push(<tr className="bg-base-200">{tmp_cols}</tr>);
+      tmp_rows.push(
+        <tr key={uuidv4()} className="bg-base-200">
+          {tmp_cols}
+        </tr>
+      );
       tmp_cols = [];
       tmp_cols.push(
-        <td className="text-center align-middle h-15">
+        <td key={uuidv4()} className="text-center align-middle h-18">
           <FontAwesomeIcon icon={icons[item]} className="mr-2" />
           {iconDefenition[item]}
         </td>
       );
     }
-
     if (index + 1 === amenitiesList.length) {
-      tmp_rows.push(<tr className="bg-base-200">{tmp_cols}</tr>);
+      tmp_rows.push(
+        <tr key={uuidv4()} className="bg-base-200">
+          {tmp_cols}
+        </tr>
+      );
       return tmp_rows;
     }
   });
-  console.log(amenitiesJsx);
+  console.log(uuidv4());
   return (
-    <table className="table text-base w-1/2">
+    <table className="table text-base w-full lg:w-1/2">
       <tbody>{amenitiesJsx}</tbody>
     </table>
   );

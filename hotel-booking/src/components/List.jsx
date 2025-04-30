@@ -3,6 +3,7 @@ import HotelRating from "./HotelRating";
 import Loading from "./Loading";
 import Divider from "./Divider";
 import ErrorDisplay from "./ErrorDisplay";
+import InfoAlert from "./InfoAlert";
 
 function List({ items, loading, error, listTitle, isForHotels = true }) {
   if (loading) {
@@ -23,6 +24,11 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
         <ErrorDisplay message={error.message} />
       </div>
     );
+  }
+  console.log(items);
+  // if items is empty
+  if (items.length === 0) {
+    return <InfoAlert message={"No items are currently available."} />;
   }
 
   const itemsJsx = isForHotels
