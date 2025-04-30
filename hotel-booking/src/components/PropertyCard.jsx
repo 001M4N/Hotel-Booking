@@ -16,9 +16,9 @@ function PropertyCard({
   return (
     <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
       <Carousel
-        items={imgSrc.map((src) => {
+        items={imgSrc.map((src, index) => {
           return (
-            <figure className="w-full">
+            <figure key={index} className="w-full">
               <img
                 src={src}
                 alt="Hotel Image"

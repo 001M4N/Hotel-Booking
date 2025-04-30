@@ -20,6 +20,10 @@ export default function HotelPage() {
     `http://localhost:3000/rooms/${hotelId}`
   );
 
+  const [commentsData, commentsLoading, commentsError] = useAPICall(
+    `http://localhost:3000/comments/${hotelId}`
+  );
+
   return (
     <>
       <Header />
@@ -41,7 +45,11 @@ export default function HotelPage() {
         listTitle={"Rooms"}
         isForHotels={false}
       />
-      <CommentsSection />
+      <CommentsSection
+        items={commentsData}
+        loading={commentsLoading}
+        error={commentsError}
+      />
       <Footer />
     </>
   );

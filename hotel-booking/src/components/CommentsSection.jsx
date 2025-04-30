@@ -1,15 +1,40 @@
 import Comment from "./comment";
+import Divider from "./Divider";
+import Loading from "./Loading";
 
-export default function CommentsSection() {
+export default function CommentsSection({ items, loading, error }) {
+  if (loading) {
+    return (
+      <div className="bg-base-300 p-5">
+        <Divider title={"Comments"} />
+        <Loading />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-base-300 p-5">
+        <Divider title={"Comments"} />
+        <Loading />
+        <ErrorDisplay message={error.message} />
+      </div>
+    );
+  }
+
+  const commentJsx = items.comments.map((item) => {
+    return (
+      <div key={item.id}>
+        <Comment>{item.comment}</Comment>
+        {"reply" in item && <Comment isReply={true}>{item.reply}</Comment>}
+      </div>
+    );
+  });
+
   return (
     <div className="bg-base-300 p-5">
-      <div className="divider mb-6">
-        <h2 className="text-xl font-bold text-center">Comments</h2>
-      </div>
-      <Comment />
-      <Comment isReply="True" />
-      <Comment />
-      <Comment isReply="True" />
+      <Divider title={"Comments"} />
+      {commentJsx}
     </div>
   );
 }
