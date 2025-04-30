@@ -5,7 +5,7 @@ export default function Map({ lat, long, markerName }) {
   return (
     <div className="h-80 w-1/3">
       <MapContainer
-        center={[lat, lang]}
+        center={[lat, long]}
         zoom={16}
         style={{ height: "100%", width: "100%", borderRadius: "5px" }}
       >

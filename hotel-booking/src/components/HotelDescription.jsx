@@ -3,7 +3,7 @@ import ErrorDisplay from "./ErrorDisplay";
 import Loading from "./Loading";
 import Map from "./Map";
 
-export default function HotelDescription({ items, loading, error }) {
+export default function HotelDescription({ data, loading, error }) {
   if (loading) {
     return (
       <div className="h-100">
@@ -23,7 +23,11 @@ export default function HotelDescription({ items, loading, error }) {
   return (
     <div className="w-full flex justify-evenly items-center flex-col lg:flex-row gap-x-5 m-15 justify-between">
       <Amenities />
-      <Map lat={35.715298} long={51.404343} markerName={"hotel"} />
+      <Map
+        lat={data.latLong.lat}
+        long={data.latLong.long}
+        markerName={data.name}
+      />
     </div>
   );
 }
