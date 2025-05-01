@@ -7,10 +7,8 @@ import Filter from "../components/Filter";
 import NumInput from "../components/NumInput";
 import Calendar from "../components/Calendar";
 import List from "../components/List";
-import PropertyCard from "../components/PropertyCard";
 import CommentsSection from "../components/CommentsSection";
 import Footer from "../components/Footer";
-import Divider from "../components/Divider";
 
 export default function HotelPage() {
   const { hotelId } = useParams();
@@ -43,14 +41,6 @@ export default function HotelPage() {
         <Calendar legendText={"Check in Date:"} />
         <Calendar legendText={"Check out Date:"} />
       </Filter>
-
-      {/* <div className="flex flex-col justify-center items-center my-10">
-        <Divider title={"Filters"} />
-        <NumInput />
-        <Calendar legendText={"Check in Date:"} />
-        <Calendar legendText={"Check out Date:"} />
-      </div> */}
-
       <List
         items={roomsData}
         loading={roomsDataLoading}

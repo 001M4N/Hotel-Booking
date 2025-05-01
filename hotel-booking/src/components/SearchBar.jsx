@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SearchBar({ items }) {
   const [query, setQuery] = useState("");
@@ -10,14 +11,14 @@ function SearchBar({ items }) {
     }
   });
 
-  const recommendationsJsx = recommendations.map((value, index) => {
+  const recommendationsJsx = recommendations.map((item, index) => {
     return (
       <li
         key={index}
         className="flex justify-center items-center py-2
-         text-white text-base hover:bg-blue-300"
+         text-white text-md hover:bg-blue-300"
       >
-        {value.name}
+        <Link to={`/hotelPage/${item.id}`}>{item.name}</Link>
       </li>
     );
   });
@@ -34,45 +35,46 @@ function SearchBar({ items }) {
   };
 
   return (
-    <label className="input w-xs sm:w-md relative z-100">
-      <svg
-        className="h-[1em] opacity-50"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <g
-          strokeLinejoin="round"
-          strokeLinecap="round"
-          strokeWidth="2.5"
-          fill="none"
-          stroke="currentColor"
+    <div className="relative z-100">
+      <label className="input input-lg input-primary w-xs sm:w-md">
+        <svg
+          className="h-[1em] opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
         >
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.3-4.3"></path>
-        </g>
-      </svg>
-      <input
-        type="search"
-        required
-        placeholder="Search Hotel Name"
-        className="text-lg"
-        value={query}
-        onChange={(e) => {
-          handleSearch(e.target.value);
-        }}
-        onFocus={hadleFocus}
-        onBlur={hadleBlur}
-      />
-
+          <g
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="2.5"
+            fill="none"
+            stroke="currentColor"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input
+          type="search"
+          required
+          placeholder="Search Hotel Name"
+          value={query}
+          onChange={(e) => {
+            handleSearch(e.target.value);
+          }}
+          onFocus={hadleFocus}
+          onBlur={hadleBlur}
+        />
+      </label>
       {recommendationsJsx.length != 0 && recomVisible && (
         <ul
           className="absolute w-full top-full left-0 z-101 bg-base-200
-         overflow-y-auto max-h-30 border border-b rounded-md"
+   overflow-y-auto max-h-30 border-gray-500 border-opacity-70 border border-b rounded-xs"
         >
           {recommendationsJsx}
         </ul>
       )}
-    </label>
+    </div>
   );
 }
+
 export default SearchBar;
