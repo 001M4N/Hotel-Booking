@@ -1,6 +1,6 @@
 export default function NumInput() {
   return (
-    <fieldset className="fieldset w-1/5">
+    <fieldset className="fieldset w-1/2 lg:w-1/5">
       <legend className="fieldset-legend">Number of People:</legend>
       <input
         type="number"
