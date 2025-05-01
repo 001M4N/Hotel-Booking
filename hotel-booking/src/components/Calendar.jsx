@@ -1,3 +1,8 @@
-export default function Calendar() {
-  return <input type="date" className="input input-lg" />;
+export default function Calendar({ legendText }) {
+  return (
+    <fieldset className="fieldset w-1/5">
+      <legend className="fieldset-legend">{legendText}</legend>
+      <input type="date" className="input input-lg w-full input-primary" />
+    </fieldset>
+  );
 }
