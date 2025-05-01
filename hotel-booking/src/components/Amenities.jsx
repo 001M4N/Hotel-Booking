@@ -75,7 +75,11 @@ export default function Amenities({ amenitiesList }) {
   const amenitiesJsx = amenitiesList.map((item, index) => {
     if (tmp_cols.length % numCols !== 0) {
       tmp_cols.push(
-        <td key={uuidv4()} className="text-center align-middle h-18">
+        <td
+          key={uuidv4()}
+          colSpan={index + 1 === amenitiesList.length ? "100%" : "0%"}
+          className="text-center align-middle h-18"
+        >
           <FontAwesomeIcon icon={icons[item]} className="mr-2" />
           {iconDefenition[item]}
         </td>
@@ -88,7 +92,11 @@ export default function Amenities({ amenitiesList }) {
       );
       tmp_cols = [];
       tmp_cols.push(
-        <td key={uuidv4()} className="text-center align-middle h-18">
+        <td
+          key={uuidv4()}
+          colSpan={index + 1 === amenitiesList.length ? "100%" : "0%"}
+          className="text-center align-middle h-18"
+        >
           <FontAwesomeIcon icon={icons[item]} className="mr-2" />
           {iconDefenition[item]}
         </td>
