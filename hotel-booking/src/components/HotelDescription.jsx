@@ -8,7 +8,6 @@ export default function HotelDescription({ data, loading, error }) {
   if (loading) {
     return (
       <div className="h-100">
-        <Divider title={"Amenities and Hotel Location"} />
         <Loading />
       </div>
     );
@@ -17,7 +16,6 @@ export default function HotelDescription({ data, loading, error }) {
   if (error) {
     return (
       <div className="h-100">
-        <Divider title={"Amenities and Hotel Location"} />
         <ErrorDisplay message={error.message} />
       </div>
     );
@@ -25,7 +23,6 @@ export default function HotelDescription({ data, loading, error }) {
 
   return (
     <div className="mt-5">
-      <Divider title={"Amenities and Hotel Location"} />
       <div
         className="w-full flex justify-evenly m-2 items-center flex-col
      lg:flex-row gap-x-5 gap-y-5 justify-between"
