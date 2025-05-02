@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function SearchBar({ items }) {
   const [query, setQuery] = useState("");
   const [recomVisible, setRecomVisible] = useState(false);
+  const searchBarRef = useRef(null);
+
+  // Handle hiding recommendations when clicking outside the SearchBar
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        searchBarRef.current &&
+        !searchBarRef.current.contains(event.target)
+      ) {
+        setRecomVisible(false);
+      }
+      document.addEventListener("click", handleClickOutside);
+
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    };
+  }, []);
 
   const recommendations = items.filter((item) => {
     if (query != "") {
@@ -27,15 +45,12 @@ function SearchBar({ items }) {
     setQuery(value);
   };
 
-  const hadleFocus = () => {
+  const handleFocus = () => {
     setRecomVisible(true);
-  };
-  const hadleBlur = () => {
-    setRecomVisible(false);
   };
 
   return (
-    <div className="relative z-100">
+    <div className="relative z-100" ref={searchBarRef}>
       <label className="input input-lg input-primary w-xs sm:w-md">
         <svg
           className="h-[1em] opacity-50"
@@ -61,14 +76,13 @@ function SearchBar({ items }) {
           onChange={(e) => {
             handleSearch(e.target.value);
           }}
-          onFocus={hadleFocus}
-          onBlur={hadleBlur}
+          onFocus={handleFocus}
         />
       </label>
       {recommendationsJsx.length != 0 && recomVisible && (
         <ul
           className="absolute w-full top-full left-0 z-101 bg-base-200
-   overflow-y-auto max-h-30 border-gray-500 border-opacity-70 border border-b rounded-xs"
+          overflow-y-auto max-h-30 border-gray-500 border-opacity-70 border border-b rounded-xs"
         >
           {recommendationsJsx}
         </ul>
