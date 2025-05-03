@@ -13,7 +13,7 @@ export default function SignInUpPage({ isSignin = true }) {
       <PasswordInput />
       <button className="btn mt-5 mb-2 btn-lg">Sign In</button>
       <RememberMeButton />
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center mt-2">
         <Link to={"/SignUp"}>Create an Account</Link>
       </div>
     </>
@@ -24,7 +24,7 @@ export default function SignInUpPage({ isSignin = true }) {
       <PasswordInput placeholderText="Repeat Password" />
       <TermsAndPolicyCheckBox />
       <button className="btn mt-5 mb-2 btn-lg">Sign Up</button>
-      <div className="w-full flex justify-center items-center">
+      <div className="w-full flex justify-center items-center mt-2">
         <Link to={"/SignIn"}>Already Have an Account?</Link>
       </div>
     </>
