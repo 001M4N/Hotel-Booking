@@ -1,7 +1,7 @@
 export default function PasswordInput({ placeholderText = "Password" }) {
   return (
     <div className="my-2 w-full">
-      <label className="input validator w-full">
+      <label className="input validator w-full input-lg">
         <svg
           className="h-[1em] opacity-50"
           xmlns="http://www.w3.org/2000/svg"
