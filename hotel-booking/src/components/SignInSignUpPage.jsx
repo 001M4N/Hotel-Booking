@@ -3,8 +3,8 @@ import PasswordInput from "./PasswordInput";
 import RememberMeButton from "./RememberMeButton";
 import TermsAndPolicyCheckBox from "./TermsAndPolicyCheckBox";
 
-export default function LoginSignInForm({ isLogin = true }) {
-  const form = isLogin ? (
+export default function SignInSignUpPage({ isSignin = true }) {
+  const form = isSignin ? (
     <>
       <EmailInput />
       <PasswordInput />

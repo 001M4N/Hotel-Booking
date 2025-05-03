@@ -9,7 +9,7 @@ function Header() {
         </Link>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-lg">Sign in/up</button>
+        <button className="btn btn-lg">Sign in</button>
       </div>
     </div>
   );
