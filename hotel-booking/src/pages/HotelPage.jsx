@@ -70,6 +70,7 @@ export default function HotelPage() {
         items={roomsData}
         loading={roomsDataLoading}
         error={roomsDataError}
+        filterObj={{ numPeople, checkInDate, checkOutDate }}
         listTitle={"Rooms"}
         isForHotels={false}
       />

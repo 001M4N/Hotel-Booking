@@ -5,7 +5,14 @@ import Divider from "./Divider";
 import ErrorDisplay from "./ErrorDisplay";
 import InfoAlert from "./InfoAlert";
 
-function List({ items, loading, error, listTitle, isForHotels = true }) {
+function List({
+  items,
+  loading,
+  error,
+  filterObj = {},
+  listTitle,
+  isForHotels = true,
+}) {
   if (loading) {
     return (
       <div className="h-100">
@@ -73,6 +80,7 @@ function List({ items, loading, error, listTitle, isForHotels = true }) {
         );
       })
     : items.rooms.map((item) => {
+        console.log(filterObj.numPeople < item.size);
         return (
           <PropertyCard
             key={item.id}
