@@ -8,13 +8,18 @@ function PropertyCard({
   cardDescription,
   buttonText,
   buttonLink,
+  isFiltered = false,
 }) {
   const [cardSize, cardColor, textColor] = isPopular
     ? ["w-100 sm:w-90", "bg-amber-100", "text-black"]
     : ["w-80 sm:w-70", "bg-slate-700", "text-white"];
 
   return (
-    <div className={`card ${cardColor} ${cardSize} shadow-sm`}>
+    <div
+      className={`card ${cardColor} ${cardSize} shadow-sm ${
+        isFiltered && "blur-xs"
+      }`}
+    >
       <Carousel
         items={imgSrc.map((src, index) => {
           return (
@@ -35,9 +40,15 @@ function PropertyCard({
         </div>
         <div className={`text-lg ${textColor}`}>{cardDescription}</div>
         <div className="card-actions">
-          <Link to={buttonLink}>
-            <button className="btn btn-base-200">{buttonText}</button>
-          </Link>
+          {isFiltered ? (
+            <button className="btn btn-base-200" disabled="disabled">
+              {buttonText}
+            </button>
+          ) : (
+            <Link to={buttonLink}>
+              <button className="btn btn-base-200">{buttonText}</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>

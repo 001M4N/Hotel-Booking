@@ -94,6 +94,7 @@ function List({
             }
             buttonText={"Book"}
             buttonLink={""}
+            isFiltered={!(filterObj.numPeople < item.size)}
           />
         );
       });
