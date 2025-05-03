@@ -28,7 +28,9 @@ function List({
       const bookedTimeStart = new Date(time.startDate);
       const bookedTimeEnd = new Date(time.endDate);
       return (
-        bookedTimeStart <= selectedTimeStart || selectedTimeEnd <= bookedTimeEnd
+        (bookedTimeStart <= selectedTimeStart &&
+          selectedTimeStart <= bookedTimeEnd) ||
+        (bookedTimeStart <= selectedTimeEnd && selectedTimeEnd <= bookedTimeEnd)
       );
     });
   };
@@ -109,6 +111,16 @@ function List({
               <>
                 <p>{`Price: $${item.price}`}</p>
                 <p>{`Size: ${item.size} person(s)`}</p>
+                <div
+                  role="alert"
+                  className="alert alert-warning alert-outline flex flex-col
+                   justify-center items-center mt-3 mb-2"
+                >
+                  <p>Unavailable Dates:</p>
+                  {item.reservedTime.map((time) => {
+                    return <span>{`${time.startDate} - ${time.endDate}`}</span>;
+                  })}
+                </div>
               </>
             }
             buttonText={"Book"}
