@@ -48,7 +48,7 @@ export default function Amenities({ amenitiesList }) {
   const iconDefenition = {
     Wifi: "Wifi",
     Parking: "Free Parking Place",
-    Wheelchair: "Facilities for Disable People",
+    Wheelchair: "Facilities for Disabled People",
     Elevator: "Elevator",
     KitMedical: "On-Site Doctor",
     Taxi: "Taxi",
