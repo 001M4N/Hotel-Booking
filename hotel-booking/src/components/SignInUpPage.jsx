@@ -2,8 +2,9 @@ import EmailInput from "./EmailInput";
 import PasswordInput from "./PasswordInput";
 import RememberMeButton from "./RememberMeButton";
 import TermsAndPolicyCheckBox from "./TermsAndPolicyCheckBox";
+import { Link } from "react-router-dom";
 
-export default function SignInSignUpPage({ isSignin = true }) {
+export default function SignInUpPage({ isSignin = true }) {
   const form = isSignin ? (
     <>
       <EmailInput />
@@ -11,7 +12,7 @@ export default function SignInSignUpPage({ isSignin = true }) {
       <button className="btn mt-5 mb-2">Login</button>
       <RememberMeButton />
       <div className="w-full flex justify-center items-center">
-        <a className="link text-sm mt-5">Create an Account</a>
+        <Link to={"/SignUp"}>Create an Account</Link>
       </div>
     </>
   ) : (
@@ -22,7 +23,7 @@ export default function SignInSignUpPage({ isSignin = true }) {
       <TermsAndPolicyCheckBox />
       <button className="btn mt-5 mb-2">Sign In</button>
       <div className="w-full flex justify-center items-center">
-        <a className="link text-sm mt-5">Already Have an Account?</a>
+        <Link to={"/SignIn"}>Already Have an Account?</Link>
       </div>
     </>
   );

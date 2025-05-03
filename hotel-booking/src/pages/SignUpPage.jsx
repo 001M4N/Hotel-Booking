@@ -1,5 +1,5 @@
-import SignInSignUpPage from "../components/SignInSignUpPage";
+import SignInUpPage from "../components/SignInUpPage";
 
 export default function SignUpPage() {
-  return <SignInSignUpPage isSignin={false} />;
+  return <SignInUpPage isSignin={false} />;
 }
