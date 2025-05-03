@@ -13,6 +13,26 @@ function List({
   listTitle,
   isForHotels = true,
 }) {
+  // calc if the rooms meets the filter selections: if it does not, the room gets filtered
+  const calcIsFiltered = (item) => {
+    // if the selected number of people is greater than room size, the room gets filtered
+    if (item.size < filterObj.numPeople) {
+      return true;
+    }
+
+    // check for the dates: if the selected date is inside the booked dates, then the room gets filtered
+    const selectedTimeStart = new Date(filterObj.checkInDate);
+    const selectedTimeEnd = new Date(filterObj.checkOutDate);
+
+    return item.reservedTime.some((time) => {
+      const bookedTimeStart = new Date(time.startDate);
+      const bookedTimeEnd = new Date(time.endDate);
+      return (
+        bookedTimeStart <= selectedTimeStart || selectedTimeEnd <= bookedTimeEnd
+      );
+    });
+  };
+
   if (loading) {
     return (
       <div className="h-100">
@@ -80,7 +100,6 @@ function List({
         );
       })
     : items.rooms.map((item) => {
-        console.log(filterObj.numPeople < item.size);
         return (
           <PropertyCard
             key={item.id}
@@ -94,7 +113,7 @@ function List({
             }
             buttonText={"Book"}
             buttonLink={""}
-            isFiltered={!(filterObj.numPeople < item.size)}
+            isFiltered={calcIsFiltered(item)}
           />
         );
       });
