@@ -1,4 +1,4 @@
-export default function NumInput({ onNumInputChange }) {
+export default function NumInput({ value, onNumInputChange }) {
   return (
     <fieldset className="fieldset w-1/2 lg:w-1/5">
       <legend className="fieldset-legend">Number of People:</legend>
@@ -9,6 +9,7 @@ export default function NumInput({ onNumInputChange }) {
           onNumInputChange(event.target.value);
         }}
         placeholder="Type a number"
+        value={value}
       />
     </fieldset>
   );

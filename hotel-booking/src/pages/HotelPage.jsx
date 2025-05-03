@@ -9,7 +9,6 @@ import Calendar from "../components/Calendar";
 import List from "../components/List";
 import CommentsSection from "../components/CommentsSection";
 import Footer from "../components/Footer";
-import { useSVGOverlay } from "react-leaflet/SVGOverlay";
 import { useState } from "react";
 
 export default function HotelPage() {
@@ -26,12 +25,20 @@ export default function HotelPage() {
   );
 
   const [numPeople, setNumPeople] = useState(1);
+  const [checkInDate, setcheckInDate] = useState("");
+  const [checkOutDate, setcheckOutDate] = useState("");
 
   const handleInputChange = (value) => {
     setNumPeople(value);
   };
 
-  console.log(numPeople);
+  const handleCheckInDate = (value) => {
+    setcheckInDate(value);
+  };
+
+  const handleCheckOutDate = (value) => {
+    setcheckOutDate(value);
+  };
 
   return (
     <>
@@ -47,9 +54,17 @@ export default function HotelPage() {
         error={hotelDataError}
       />
       <Filter>
-        <NumInput onNumInputChange={handleInputChange} />
-        <Calendar legendText={"Check in Date:"} />
-        <Calendar legendText={"Check out Date:"} />
+        <NumInput value={numPeople} onNumInputChange={handleInputChange} />
+        <Calendar
+          onCalendarChange={handleCheckInDate}
+          legendText={"Check in Date:"}
+          value={checkInDate}
+        />
+        <Calendar
+          onCalendarChange={handleCheckOutDate}
+          legendText={"Check out Date:"}
+          value={checkOutDate}
+        />
       </Filter>
       <List
         items={roomsData}
