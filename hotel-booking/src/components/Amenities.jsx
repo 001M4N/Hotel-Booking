@@ -111,7 +111,7 @@ export default function Amenities({ amenitiesList }) {
       return tmp_rows;
     }
   });
-  console.log(uuidv4());
+
   return (
     <table className="table text-base w-full lg:w-1/2">
       <tbody>{amenitiesJsx}</tbody>

@@ -9,6 +9,8 @@ import Calendar from "../components/Calendar";
 import List from "../components/List";
 import CommentsSection from "../components/CommentsSection";
 import Footer from "../components/Footer";
+import { useSVGOverlay } from "react-leaflet/SVGOverlay";
+import { useState } from "react";
 
 export default function HotelPage() {
   const { hotelId } = useParams();
@@ -22,6 +24,14 @@ export default function HotelPage() {
   const [commentsData, commentsLoading, commentsError] = useAPICall(
     `http://localhost:3000/comments/${hotelId}`
   );
+
+  const [numPeople, setNumPeople] = useState(1);
+
+  const handleInputChange = (value) => {
+    setNumPeople(value);
+  };
+
+  console.log(numPeople);
 
   return (
     <>
@@ -37,7 +47,7 @@ export default function HotelPage() {
         error={hotelDataError}
       />
       <Filter>
-        <NumInput />
+        <NumInput onNumInputChange={handleInputChange} />
         <Calendar legendText={"Check in Date:"} />
         <Calendar legendText={"Check out Date:"} />
       </Filter>
