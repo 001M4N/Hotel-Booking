@@ -1,4 +1,4 @@
-import Comment from "./comment";
+import Comment from "./Comment";
 import Divider from "./Divider";
 import Loading from "./Loading";
 import ErrorDisplay from "./ErrorDisplay";
