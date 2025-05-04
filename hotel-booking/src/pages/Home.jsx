@@ -9,7 +9,9 @@ import Filter from "../components/Filter";
 import ProvinceSelector from "../components/ProvinceSelector";
 
 function Home() {
-  const [data, loading, error] = useAPICall("http://localhost:3000/hotels");
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+  const [data, loading, error] = useAPICall("API_BASE_URL/hotels.json");
   const [selectedProvince, setSelectedProvince] = useState("Tehran");
 
   const handleSelect = (selectedValue) => {
