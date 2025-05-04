@@ -12,19 +12,21 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 
 export default function HotelPage() {
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const { hotelId } = useParams();
   const [hotelData, hotelDataLoading, hotelDataError] = useAPICall(
-    `${API_BASE_URL}/${hotelId}.json`
+    `${API_BASE_URL}/hotels/${hotelId}.json`
   );
   const [roomsData, roomsDataLoading, roomsDataError] = useAPICall(
     `${API_BASE_URL}/rooms/${hotelId}.json`
   );
 
   const [commentsData, commentsLoading, commentsError] = useAPICall(
-    `${API_BASE_URL}/comments/${hotelId}`
+    `${API_BASE_URL}/comments/${hotelId}.json`
   );
+
+  console.log(`${API_BASE_URL}/comments/${hotelId}`);
 
   const [numPeople, setNumPeople] = useState(1);
   const [checkInDate, setcheckInDate] = useState("");
