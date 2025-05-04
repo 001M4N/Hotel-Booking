@@ -1,7 +1,7 @@
 import ErrorDisplay from "./ErrorDisplay";
 import HotelRating from "./HotelRating";
 
-export default function Hotelbanner({ data, loading, error }) {
+export default function HotelBanner({ data, loading, error }) {
   if (loading) {
     return <div className="skeleton w-full h-80"></div>;
   }

@@ -1,7 +1,7 @@
 import useAPICall from "../hooks/useAPICall";
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import Hotelbanner from "../components/Hotelbanner";
+import HotelBanner from "../components/HotelBanner";
 import HotelDescription from "../components/HotelDescription";
 import Filter from "../components/Filter";
 import NumInput from "../components/NumInput";
@@ -43,7 +43,7 @@ export default function HotelPage() {
   return (
     <>
       <Header />
-      <Hotelbanner
+      <HotelBanner
         data={hotelData}
         loading={hotelDataLoading}
         error={hotelDataError}
