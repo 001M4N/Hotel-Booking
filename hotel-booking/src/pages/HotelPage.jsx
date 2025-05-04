@@ -26,8 +26,6 @@ export default function HotelPage() {
     `${API_BASE_URL}/comments/${hotelId}.json`
   );
 
-  console.log(`${API_BASE_URL}/comments/${hotelId}`);
-
   const [numPeople, setNumPeople] = useState(1);
   const [checkInDate, setcheckInDate] = useState("");
   const [checkOutDate, setcheckOutDate] = useState("");
